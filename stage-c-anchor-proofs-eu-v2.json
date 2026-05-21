@@ -1,0 +1,85 @@
+{
+  "schema": "faultkey-stage-c-anchor-proofs-v1",
+  "batch": "eu-v2",
+  "anchored_artifact": "anchor-payload-eu-v2.json",
+  "anchored_artifact_sha256": "fbc5640458ddfd45605879a7416cc647c4cad23bbc028878020052ea6dbcfd34",
+  "aggregate_root": "aeb13d41ddc82e0cdd08a49849b5818ff89cf05e4702769d37cd9091ff728b17",
+  "aggregate_root_scheme": "sha256 over canonical sorted list of {case_id, commitment_hash}",
+  "rule_set_version": "eu-v2",
+  "base_rule_set": "eu-v1",
+  "engine_version": "faultkey-deterministic-v1",
+  "predictions_count": 3,
+  "signing": {
+    "algorithm": "ed25519",
+    "key_lifecycle": "single-use",
+    "private_key_status": "destroyed via shred(1) post-anchor",
+    "public_key_file": "anchor-key-eu-v2.pub.pem",
+    "public_key_pem_b64": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUNvd0JRWURLMlZ3QXlFQXY4YmhCVXEvL2xzbWxrcTNCVllFMFRxWUxwZFk3WVY3c3E5blRNdC80MVE9Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=",
+    "signature_file": "anchor-payload-eu-v2.json.sig"
+  },
+  "anchors": {
+    "sigstore_rekor": {
+      "log_id": "c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d",
+      "log_index": 1594536716,
+      "uuid": "108e9186e8c5677ab7794690c9d81eab1b813414af1088223a57766e7a2ae8c84cac1bcc7b4b3506",
+      "integrated_time": "2026-05-21T20:22:01Z",
+      "rekor_url": "https://rekor.sigstore.dev/api/v1/log/entries/108e9186e8c5677ab7794690c9d81eab1b813414af1088223a57766e7a2ae8c84cac1bcc7b4b3506",
+      "verify_command": "rekor-cli get --uuid=108e9186e8c5677ab7794690c9d81eab1b813414af1088223a57766e7a2ae8c84cac1bcc7b4b3506"
+    },
+    "opentimestamps": {
+      "stamp_file": "anchor-payload-eu-v2.json.ots",
+      "calendars": [
+        "https://a.pool.opentimestamps.org",
+        "https://b.pool.opentimestamps.org",
+        "https://a.pool.eternitywall.com",
+        "https://ots.btc.catallaxy.com"
+      ],
+      "verify_command": "ots verify anchor-payload-eu-v2.json.ots -f anchor-payload-eu-v2.json",
+      "btc_confirmation": "expected within ~1-6 hours of submission timestamp"
+    }
+  },
+  "verification_three_step": [
+    "1. Pull manifest: curl -sO https://faultkey.com/anchor-log/anchor-payload-eu-v2.json && sha256sum anchor-payload-eu-v2.json (expect: fbc5640458ddfd45605879a7416cc647c4cad23bbc028878020052ea6dbcfd34)",
+    "2. Confirm Rekor sealed exactly that hash: rekor-cli get --uuid=108e9186e8c5677ab7794690c9d81eab1b813414af1088223a57766e7a2ae8c84cac1bcc7b4b3506",
+    "3. Verify OpenTimestamps once Bitcoin confirms (~1-6h after submission): ots verify anchor-payload-eu-v2.json.ots -f anchor-payload-eu-v2.json"
+  ],
+  "calibration_delta_vs_eu_v1": {
+    "schema": "rule_id_set added in eu-v2 by case",
+    "ap-v-clearview-2024": ["EU-PLD-V2-03", "EU-GDPR-V2-01"],
+    "gpdp-v-replika-2025": ["EU-PLD-V2-03", "EU-MS-V2-IT"],
+    "aepd-v-worldcoin-2024": ["EU-PLD-V2-03", "EU-MS-V2-ES"],
+    "explanation": "eu-v2 is purely additive on eu-v1. The eu-v1 rule effects (EU-PLD-03 black-box presumption, EU-PLD-04 disclosure-floor, EU-PLD-05 joint-and-several recoverable redistribution) all still fire. v2 adds PLD 2024/2853 Art. 7(c)/(d)/(e)/(f) defect axes, Art. 12(2) SME software-component recourse waiver, AI Act Art. 25 value-chain shift, Art. 26 monitoring-failure floor, Art. 27 FRIA, CJEU C-634/21 SCHUFA Art. 22 expansion, CJEU C-300/21 non-material damages, DSA Art. 6 hosting-provider knowledge, and 4 member-state PLD transpositions (FR/DE/IT/ES)."
+  },
+  "predictions": [
+    {
+      "case_id": "ap-v-clearview-2024-eu-v2",
+      "case_name": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M (eu-v2)",
+      "commitment_hash": "79d1662235884c3e",
+      "regulator_finding": "Clearview 100% liable",
+      "engine_v2_attribution": { "clearview": 0.5755, "le_customers": 0.2584, "image_db": 0.1661 },
+      "engine_v2_recoverable": { "clearview": 0.3477, "le_customers": 0.3262, "image_db": 0.3262 },
+      "applied_rules": ["EU-PLD-03", "EU-PLD-04 (×2)", "EU-PLD-V2-03", "EU-GDPR-V2-01"],
+      "agreement_with_regulator": "Engine matches AP on primary defendant. PLD-V2-03 (post-market manufacturer-control) lifts Clearview attributable share; SCHUFA C-634/21 expansion engages because LE customers \"draw strongly on\" the matching outputs."
+    },
+    {
+      "case_id": "gpdp-v-replika-2025-eu-v2",
+      "case_name": "Garante v. Luka Inc. (Replika) — €5M (eu-v2)",
+      "commitment_hash": "fe181356fc5bc2a4",
+      "regulator_finding": "Luka Inc. 100% liable",
+      "engine_v2_attribution": { "luka": 0.5041, "onboarding": 0.4959 },
+      "engine_v2_recoverable": { "onboarding": 0.5455, "luka": 0.4545 },
+      "applied_rules": ["EU-PLD-03", "EU-PLD-V2-03", "EU-MS-V2-IT"],
+      "agreement_with_regulator": "Engine matches Garante on primary defendant (Luka). PLD-V2-03 + MS-V2-IT (Italian Codice del Consumo Arts. 114, 117 strict-liability presumption) lift Luka recoverable share above 28% floor."
+    },
+    {
+      "case_id": "aepd-v-worldcoin-2024-eu-v2",
+      "case_name": "AEPD v. Tools for Humanity (Worldcoin) (eu-v2)",
+      "commitment_hash": "305bec1327846b41",
+      "regulator_finding": "Tools for Humanity 100% liable",
+      "engine_v2_attribution": { "tools_for_humanity": 0.5907, "data_subjects": 0.2380, "orb_operators": 0.1713 },
+      "engine_v2_recoverable": { "tools_for_humanity": 0.2308, "data_subjects": 0.4472, "orb_operators": 0.3220 },
+      "applied_rules": ["EU-PLD-03", "EU-PLD-05", "EU-PLD-V2-03", "EU-MS-V2-ES"],
+      "agreement_with_regulator": "Engine matches AEPD on primary defendant. MS-V2-ES (Spanish TRLGDCU Arts. 135, 137, 138 reverse-burden) floors Tools for Humanity attributable at 50% and recoverable at 30%; PLD-05 redistributes residual recoverable to EU-resident orb operators + data subjects."
+    }
+  ]
+}

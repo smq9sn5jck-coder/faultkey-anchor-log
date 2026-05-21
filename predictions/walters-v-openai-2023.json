@@ -1,0 +1,247 @@
+{
+  "case_id": "walters-v-openai-2023",
+  "case_name": "Walters v. OpenAI, L.L.C. (Appeal)",
+  "court": "Georgia Court of Appeals (appeal from Gwinnett County Superior Court)",
+  "docket": "Appeal No. A26A0XXX (filed 2025; appeal pending May 2026)",
+  "filed": "2023-06-05 (trial court); appeal filed June 2025",
+  "status_at_anchor": "Trial court granted OpenAI summary judgment May 19, 2025 on warnings/disclaimer grounds; plaintiff appealing — appeal currently pending",
+  "resolution_expected": "2026-Q4 to 2027-Q3 (appellate decision)",
+  "sealed_until": "appellate_decision",
+  "public_sources": [
+    "https://www.reuters.com/legal/litigation/openai-wins-summary-judgment-walters-defamation-2025-05-19/",
+    "https://courtlistener.com/docket/walters-v-openai-llc/"
+  ],
+  "commitment_hash": "1f03144ee03af1d5e0f87a4a4ea9c70ad76e5e1711aa0a53086396dac58a6a4d",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "walters-v-openai-2023",
+    "case_name": "Walters v. OpenAI, L.L.C. (Appeal)",
+    "court": "Georgia Court of Appeals (appeal from Gwinnett County Superior Court)",
+    "docket": "Appeal No. A26A0XXX (filed 2025; appeal pending May 2026)",
+    "filed": "2023-06-05 (trial court); appeal filed June 2025",
+    "status_at_anchor": "Trial court granted OpenAI summary judgment May 19, 2025 on warnings/disclaimer grounds; plaintiff appealing — appeal currently pending",
+    "resolution_expected": "2026-Q4 to 2027-Q3 (appellate decision)",
+    "sealed_until": "appellate_decision",
+    "public_sources": [
+      "https://www.reuters.com/legal/litigation/openai-wins-summary-judgment-walters-defamation-2025-05-19/",
+      "https://courtlistener.com/docket/walters-v-openai-llc/"
+    ],
+    "input": {
+      "title": "Walters v. OpenAI — ChatGPT defamation hallucination (appellate question)",
+      "description": "Radio host Mark Walters sued OpenAI after ChatGPT, in response to a journalist's prompt, allegedly fabricated a false claim that Walters had embezzled funds from the Second Amendment Foundation. Trial court granted OpenAI summary judgment on grounds that disclaimers and reasonable-recipient standard precluded actionable defamation. Appeal asks whether AI-hallucinated factual statements with named real persons can constitute publisher fault notwithstanding disclaimers.",
+      "category": "content_moderation",
+      "severity": "high",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "openai_walters",
+          "name": "OpenAI L.L.C.",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "OpenAI",
+          "model_id": "gpt-3.5-class-2023"
+        },
+        {
+          "id": "chatgpt_disclaimer",
+          "name": "ChatGPT Disclaimer / Terms-of-Use Surface",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "OpenAI"
+        },
+        {
+          "id": "journalist_riehl",
+          "name": "Frederick Riehl (journalist who prompted ChatGPT)",
+          "type": "human_operator",
+          "operator_role": "user"
+        },
+        {
+          "id": "walters",
+          "name": "Mark Walters (plaintiff, radio host)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_input",
+          "timestamp": "2023-05-04T00:00:00Z",
+          "actor_id": "journalist_riehl",
+          "description": "Journalist submits prompt to ChatGPT requesting summary of a Second Amendment Foundation lawsuit"
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2023-05-04T00:01:00Z",
+          "actor_id": "openai_walters",
+          "description": "ChatGPT generates response that fabricates allegations of embezzlement attributed to Mark Walters, who is not party to the actual lawsuit"
+        },
+        {
+          "id": "e3",
+          "type": "defamatory_output",
+          "timestamp": "2023-05-04T00:01:30Z",
+          "actor_id": "openai_walters",
+          "description": "Output contains specific named-person false claim of financial misconduct without any factual basis in training data or prompt"
+        },
+        {
+          "id": "e4",
+          "type": "policy_check",
+          "timestamp": "2023-05-04T00:02:00Z",
+          "actor_id": "chatgpt_disclaimer",
+          "description": "Disclaimer surface relied upon as cure under summary judgment; appellate question whether sufficient to defeat reasonable-recipient standard"
+        },
+        {
+          "id": "e5",
+          "type": "human_review",
+          "timestamp": "2023-05-04T00:05:00Z",
+          "actor_id": "journalist_riehl",
+          "description": "Journalist reviewed output and chose not to publish; no harm pleading on actual publication — appellate question whether mere generation is publication"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_3e40b386-1f12f297",
+      "certificate_id": "cert_59d6eb7d-7884aa6e",
+      "timestamp": "2026-05-21T16:58:49.601Z",
+      "title": "Walters v. OpenAI — ChatGPT defamation hallucination (appellate question)",
+      "category": "content_moderation",
+      "severity": "high",
+      "jurisdiction": "US",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "OpenAI L.L.C.",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.664,
+          "vendor": "OpenAI",
+          "model": "gpt-3.5-class-2023"
+        },
+        "secondary_parties": [
+          {
+            "name": "ChatGPT Disclaimer / Terms-of-Use Surface",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.195
+          },
+          {
+            "name": "Frederick Riehl (journalist who prompted ChatGPT)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.14
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2023-05-04T00:00:00Z",
+          "actor_id": "journalist_riehl",
+          "actor_name": "Frederick Riehl (journalist who prompted ChatGPT)",
+          "type": "data_input",
+          "description": "Journalist submits prompt to ChatGPT requesting summary of a Second Amendment Foundation lawsuit",
+          "contribution_pct": 7
+        },
+        {
+          "step": 2,
+          "timestamp": "2023-05-04T00:01:00Z",
+          "actor_id": "openai_walters",
+          "actor_name": "OpenAI L.L.C.",
+          "type": "inference",
+          "description": "ChatGPT generates response that fabricates allegations of embezzlement attributed to Mark Walters, who is not party to the actual lawsuit",
+          "contribution_pct": 33.2
+        },
+        {
+          "step": 3,
+          "timestamp": "2023-05-04T00:01:30Z",
+          "actor_id": "openai_walters",
+          "actor_name": "OpenAI L.L.C.",
+          "type": "defamatory_output",
+          "description": "Output contains specific named-person false claim of financial misconduct without any factual basis in training data or prompt",
+          "contribution_pct": 33.2
+        },
+        {
+          "step": 4,
+          "timestamp": "2023-05-04T00:02:00Z",
+          "actor_id": "chatgpt_disclaimer",
+          "actor_name": "ChatGPT Disclaimer / Terms-of-Use Surface",
+          "type": "policy_check",
+          "description": "Disclaimer surface relied upon as cure under summary judgment; appellate question whether sufficient to defeat reasonable-recipient standard",
+          "contribution_pct": 19.5
+        },
+        {
+          "step": 5,
+          "timestamp": "2023-05-04T00:05:00Z",
+          "actor_id": "journalist_riehl",
+          "actor_name": "Frederick Riehl (journalist who prompted ChatGPT)",
+          "type": "human_review",
+          "description": "Journalist reviewed output and chose not to publish; no harm pleading on actual publication — appellate question whether mere generation is publication",
+          "contribution_pct": 7
+        }
+      ],
+      "damages": {
+        "estimated_cents": 929600,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "1.162"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "8bf82c735555929c",
+        "merkle_root": "23b1e9f3-2e3a8e4",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_59d6eb7d-7884aa6e"
+      },
+      "deterministic_proof": {
+        "input_hash": "20678c31-135cd22",
+        "output_hash": "5ed70d1a-7f854c0b",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

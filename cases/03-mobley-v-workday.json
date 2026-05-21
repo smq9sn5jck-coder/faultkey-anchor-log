@@ -1,0 +1,102 @@
+{
+  "case_id": "mobley-v-workday-2023",
+  "case_name": "Mobley v. Workday, Inc.",
+  "court": "United States District Court, Northern District of California",
+  "docket": "3:23-cv-00770",
+  "filed": "2023-02-21",
+  "status_at_anchor": "Conditional ADEA collective certification granted May 16, 2025; opt-in period opened January 13, 2026; discovery ongoing",
+  "resolution_expected": "2027-Q2 to 2028-Q4 (likely class settlement)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.forbes.com/sites/joebrandt/2026/01/13/mobley-workday-class-certification-opt-in/",
+    "https://www.eeoc.gov/newsroom/eeoc-announces-mobley-workday-amicus"
+  ],
+  "input": {
+    "title": "Mobley v. Workday — AI hiring algorithm age/race discrimination (ADEA + Title VII)",
+    "description": "Plaintiff Derek Mobley alleges Workday's algorithmic candidate-scoring tool — embedded in hiring workflows of hundreds of employer-clients — systematically rejected applications from candidates over 40, Black candidates, and candidates with disabilities. Mobley alleges 100+ rejections from Workday-powered employers. Conditional ADEA collective certified May 2025. Court ruled Workday could be liable as an 'agent' of its employer-customers — landmark vendor-liability question.",
+    "category": "employment",
+    "severity": "high",
+    "jurisdiction": "US",
+    "financial_impact_cents": 0,
+    "currency": "USD",
+    "agents": [
+      {
+        "id": "workday_algo",
+        "name": "Workday HCM Candidate Scoring Algorithm",
+        "type": "ai_system",
+        "operator_role": "provider",
+        "vendor_name": "Workday, Inc.",
+        "model_id": "workday-recruiting-ml-stack"
+      },
+      {
+        "id": "training_data_source",
+        "name": "Historical Hiring Dataset (Workday training corpus)",
+        "type": "third_party",
+        "operator_role": "vendor"
+      },
+      {
+        "id": "employer_clients",
+        "name": "Workday Employer-Clients (hundreds of companies)",
+        "type": "human_operator",
+        "operator_role": "deployer"
+      },
+      {
+        "id": "hr_reviewers",
+        "name": "Employer HR Reviewers (rubber-stamping algo rejections)",
+        "type": "human_operator",
+        "operator_role": "user"
+      },
+      {
+        "id": "mobley",
+        "name": "Derek Mobley (plaintiff applicant)",
+        "type": "human_operator",
+        "operator_role": "user"
+      }
+    ],
+    "events": [
+      {
+        "id": "e1",
+        "type": "data_input",
+        "timestamp": "2018-01-01T00:00:00Z",
+        "actor_id": "training_data_source",
+        "description": "Workday algorithm trained on historical hiring decisions reflecting documented industry bias against older / Black / disabled candidates"
+      },
+      {
+        "id": "e2",
+        "type": "resume_scan",
+        "timestamp": "2020-06-01T00:00:00Z",
+        "actor_id": "workday_algo",
+        "description": "Algorithm scores Mobley's resumes; despite credentials, scores consistently below pass-through threshold across employer instances"
+      },
+      {
+        "id": "e3",
+        "type": "scoring",
+        "timestamp": "2020-09-15T00:00:00Z",
+        "actor_id": "workday_algo",
+        "description": "Disparate-impact scoring observed across protected-class applicants per EEOC analysis"
+      },
+      {
+        "id": "e4",
+        "type": "auto_rejection",
+        "timestamp": "2021-01-15T00:00:00Z",
+        "actor_id": "workday_algo",
+        "description": "Auto-rejection emails sent to Mobley by employer-clients within minutes/hours of application — pattern consistent with no human review of algo recommendation"
+      },
+      {
+        "id": "e5",
+        "type": "human_override_missed",
+        "timestamp": "2021-03-01T00:00:00Z",
+        "actor_id": "hr_reviewers",
+        "description": "Employer HR functions failed to apply independent review of algo recommendation; no human-in-the-loop check on protected-class outcomes"
+      },
+      {
+        "id": "e6",
+        "type": "policy_check",
+        "timestamp": "2022-06-01T00:00:00Z",
+        "actor_id": "employer_clients",
+        "description": "Employer-clients failed audit obligations under EEOC Title VII for AI hiring tools per 2022 guidance"
+      }
+    ],
+    "deterministic_only": true
+  }
+}

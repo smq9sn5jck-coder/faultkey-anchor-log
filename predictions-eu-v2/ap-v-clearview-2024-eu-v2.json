@@ -1,0 +1,313 @@
+{
+  "case_id": "ap-v-clearview-2024-eu-v2",
+  "case_name": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M (eu-v2)",
+  "court": "Autoriteit Persoonsgegevens (Dutch DPA)",
+  "docket": "AP-Clearview-2024-05-16 (decision 16 May 2024, published 3 Sep 2024)",
+  "filed": "2024-05-16",
+  "status_at_anchor": "Final administrative decision in force; €30.5M fine + four orders subject to penalty payment; Clearview missed appeal window in NL",
+  "resolution_expected": "In force; ongoing penalty for non-compliance under collection",
+  "sealed_until": "anchored_immediately (decision is already public)",
+  "public_sources": [
+    "https://www.edpb.europa.eu/news/national-news/2024/dutch-supervisory-authority-imposes-fine-clearview-because-illegal-data_en",
+    "https://www.autoriteitpersoonsgegevens.nl/en/documents/decision-fine-clearview-ai",
+    "https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition"
+  ],
+  "rule_set_version": "eu-v2",
+  "regulator_outcome": {
+    "primary_party": "Clearview AI Inc.",
+    "primary_share_pct": 100,
+    "secondary_parties": [],
+    "instrument": "GDPR Articles 5(1)(a), 6(1), 9(1), 12, 14, 15, 27 (the AI Act 2024/1689 had not yet entered application at the decision date)",
+    "fine_eur": 30500000
+  },
+  "commitment_hash": "79d1662235884c3e439e875d5fa1f5e51ef09194c8d80e7e4fda00b89f062957",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "ap-v-clearview-2024-eu-v2",
+    "case_name": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M (eu-v2)",
+    "court": "Autoriteit Persoonsgegevens (Dutch DPA)",
+    "docket": "AP-Clearview-2024-05-16 (decision 16 May 2024, published 3 Sep 2024)",
+    "filed": "2024-05-16",
+    "status_at_anchor": "Final administrative decision in force; €30.5M fine + four orders subject to penalty payment; Clearview missed appeal window in NL",
+    "resolution_expected": "In force; ongoing penalty for non-compliance under collection",
+    "sealed_until": "anchored_immediately (decision is already public)",
+    "public_sources": [
+      "https://www.edpb.europa.eu/news/national-news/2024/dutch-supervisory-authority-imposes-fine-clearview-because-illegal-data_en",
+      "https://www.autoriteitpersoonsgegevens.nl/en/documents/decision-fine-clearview-ai",
+      "https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition"
+    ],
+    "rule_set_version": "eu-v2",
+    "regulator_outcome": {
+      "primary_party": "Clearview AI Inc.",
+      "primary_share_pct": 100,
+      "secondary_parties": [],
+      "instrument": "GDPR Articles 5(1)(a), 6(1), 9(1), 12, 14, 15, 27 (the AI Act 2024/1689 had not yet entered application at the decision date)",
+      "fine_eur": 30500000
+    },
+    "input": {
+      "title": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M fine for unlawful biometric processing",
+      "description": "Dutch Data Protection Authority imposed a €30.5M administrative fine plus four orders subject to penalty payment on Clearview AI Inc. for unlawful processing of biometric data of Dutch data subjects via its facial-recognition service marketed to law-enforcement and public-defender customers. The AP found violations of GDPR Articles 5(1)(a), 6(1), 9(1), 12(1)–(3), 14(1)–(2), 15, and 27. Decision dated 16 May 2024, published 3 September 2024.",
+      "category": "biometric_identification",
+      "severity": "critical",
+      "jurisdiction": "NL",
+      "financial_impact_cents": 3050000000,
+      "currency": "EUR",
+      "agents": [
+        {
+          "id": "clearview",
+          "name": "Clearview AI Inc.",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Clearview AI Inc.",
+          "model_id": "clearview-fr",
+          "eu_resident": false
+        },
+        {
+          "id": "image_db",
+          "name": "Web-Scraped Image Database (>30bn images)",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "Clearview AI Inc.",
+          "eu_resident": false
+        },
+        {
+          "id": "le_customers",
+          "name": "Law-Enforcement / Public-Defender Customers",
+          "type": "human_operator",
+          "operator_role": "user",
+          "eu_resident": false
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_retrieval",
+          "timestamp": "2020-01-01T00:00:00Z",
+          "actor_id": "image_db",
+          "description": "Clearview crawled the public web and ingested billions of facial images of EU/NL data subjects without legal basis (GDPR Art. 5(1)(a) + Art. 6(1))."
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2020-01-01T00:00:01Z",
+          "actor_id": "clearview",
+          "description": "Clearview generated biometric vectors from the scraped images and offered 1:N matching against new probe images — special-category processing under GDPR Art. 9(1) without exception."
+        },
+        {
+          "id": "e3",
+          "type": "auto_rejection",
+          "timestamp": "2023-01-01T00:00:00Z",
+          "actor_id": "le_customers",
+          "description": "Clearview failed to appoint an EU representative under GDPR Art. 27 and refused or ignored data-subject access requests under Art. 12(2)–(3) and Art. 15."
+        }
+      ],
+      "deterministic_only": true,
+      "eu_flags": {
+        "high_risk_ai": true,
+        "pld_compensable_damage": false,
+        "ai_is_opaque_black_box": true,
+        "defendant_failed_disclosure_order": true,
+        "provider_breach_was_unforeseeable": false,
+        "human_oversight_unassigned_or_unqualified": true,
+        "deployer_input_data_unrepresentative": true,
+        "continuous_learning_post_deployment": true,
+        "post_market_under_manufacturer_control": true,
+        "failed_cybersecurity_requirements": false,
+        "interconnection_with_related_products_foreseeable": false,
+        "scoring_drawn_strongly_on_by_third_party": true,
+        "non_material_damages_only": true,
+        "material_damages_present": false,
+        "deployer_is_hosting_provider": false,
+        "actual_knowledge_of_illegal_content": false,
+        "fria_required": true,
+        "fria_completed": false
+      }
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try, with the eu-v2 rule overlay applied (additive on eu-v1). Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor.",
+      "incident_id": "inc_f55777b82bfac957",
+      "certificate_id": "cert_29a48b21-8f6ca32",
+      "timestamp": "2026-05-21T20:21:26.396Z",
+      "title": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M fine for unlawful biometric processing",
+      "category": "biometric_identification",
+      "severity": "critical",
+      "jurisdiction": "NL",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Clearview AI Inc.",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.533,
+          "vendor": "Clearview AI Inc.",
+          "model": "clearview-fr",
+          "id": "clearview"
+        },
+        "secondary_parties": [
+          {
+            "name": "Law-Enforcement / Public-Defender Customers",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.284,
+            "id": "le_customers"
+          },
+          {
+            "name": "Web-Scraped Image Database (>30bn images)",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.183,
+            "id": "image_db"
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2020-01-01T00:00:00Z",
+          "actor_id": "image_db",
+          "actor_name": "Web-Scraped Image Database (>30bn images)",
+          "type": "data_retrieval",
+          "description": "Clearview crawled the public web and ingested billions of facial images of EU/NL data subjects without legal basis (GDPR Art. 5(1)(a) + Art. 6(1)).",
+          "contribution_pct": 18.3
+        },
+        {
+          "step": 2,
+          "timestamp": "2020-01-01T00:00:01Z",
+          "actor_id": "clearview",
+          "actor_name": "Clearview AI Inc.",
+          "type": "inference",
+          "description": "Clearview generated biometric vectors from the scraped images and offered 1:N matching against new probe images — special-category processing under GDPR Art. 9(1) without exception.",
+          "contribution_pct": 53.3
+        },
+        {
+          "step": 3,
+          "timestamp": "2023-01-01T00:00:00Z",
+          "actor_id": "le_customers",
+          "actor_name": "Law-Enforcement / Public-Defender Customers",
+          "type": "auto_rejection",
+          "description": "Clearview failed to appoint an EU representative under GDPR Art. 27 and refused or ignored data-subject access requests under Art. 12(2)–(3) and Art. 15.",
+          "contribution_pct": 28.4
+        }
+      ],
+      "damages": {
+        "estimated_cents": 3562400000,
+        "currency": "EUR",
+        "basis": "claimant_stated",
+        "multiplier_applied": "1.168"
+      },
+      "regulatory": {
+        "eu_ai_act_article_6": true,
+        "eu_ai_act_article_25": true,
+        "eu_ai_act_article_26": true,
+        "eu_ai_act_article_27": true,
+        "eu_ai_act_article_52": false,
+        "eu_ai_act_annex_iii": true,
+        "eu_pld_2024_2853": true,
+        "gdpr": true,
+        "dsa_2022_2065": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "1cd49317-3d86d208",
+        "merkle_root": "edf958303354e6df",
+        "anchor": "ots+rekor (eu-v2 batch)",
+        "verification_url": "https://faultkey.com/verify/cert_29a48b21-8f6ca32"
+      },
+      "deterministic_proof": {
+        "input_hash": "95dab3434b770dac",
+        "output_hash": "40719a68-6123db79",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      },
+      "eu_overlay": {
+        "attributable": {
+          "clearview": 0.57545,
+          "le_customers": 0.258422,
+          "image_db": 0.166128
+        },
+        "recoverable": {
+          "clearview": 0.347682,
+          "le_customers": 0.326159,
+          "image_db": 0.326159
+        },
+        "presumption_in_claimant_favour": true,
+        "joint_and_several_chain": [],
+        "applied_rules": [
+          {
+            "rule_id": "EU-PLD-03",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_10",
+            "description": "Black-box presumption: technical/scientific complexity shifts evidentiary burden in claimant's favour (PLD Art. 10).",
+            "delta_pp": {}
+          },
+          {
+            "rule_id": "EU-PLD-04",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_9",
+            "description": "Disclosure failure presumption: recoverable share floored at 50% (PLD Art. 9 / Art. 10).",
+            "delta_pp": {
+              "image_db": 31.73
+            }
+          },
+          {
+            "rule_id": "EU-PLD-04",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_9",
+            "description": "Disclosure failure presumption: recoverable share floored at 50% (PLD Art. 9 / Art. 10).",
+            "delta_pp": {
+              "le_customers": 21.57
+            }
+          },
+          {
+            "rule_id": "EU-PLD-V2-03",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_7",
+            "description": "PLD Art. 7(e) post-market manufacturer-control: defect deemed at-time-of-supply when arising while product remained under manufacturer control. Provider attributable +10pp.",
+            "delta_pp": {
+              "clearview": 10
+            }
+          },
+          {
+            "rule_id": "EU-GDPR-V2-01",
+            "authority_url": "https://curia.europa.eu/juris/document/document.jsf?docid=280426",
+            "description": "CJEU C-634/21 SCHUFA: automated scoring 'drawn strongly on' by third-party decision-maker is itself an Art. 22 decision. Presumption engages; provider recoverable floor 20%.",
+            "delta_pp": {}
+          }
+        ],
+        "rule_set_version": "eu-v2",
+        "base_rule_set": "eu-v1"
+      }
+    }
+  }
+}

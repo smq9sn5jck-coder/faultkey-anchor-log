@@ -1,0 +1,15 @@
+FAULTKEY ANCHOR LOG — COMMITMENT STATEMENT
+============================================
+Date: 2026-05-21T16:59:30Z
+Engine: faultkey-deterministic-v1
+Commitment scheme: faultkey-anchor-v1 (sha256 over canonical {case_id, input, prediction_core})
+Aggregate root hash: 2d003092f9e4c1fc10653490a46bae28d13aaac9f1451bd3fe96a3bf8cea0a2f
+
+This file commits FaultKey to specific deterministic predictions on 8 active or recently-resolved AI liability cases. The full prediction inputs and outputs are sealed inside the artifacts referenced by manifest.json. The aggregate root above is anchored to:
+
+1. OpenTimestamps (Bitcoin blockchain) — see anchor-payload.json.ots
+2. Sigstore Rekor (transparency log) — see rekor-entry.json
+
+Resolution protocol: When each underlying case reaches a published verdict or settlement, the corresponding sealed prediction will be revealed and compared against the actual outcome on https://faultkey.com/anchor-log.
+
+This is a calibration exercise. Predictions are NOT legal advice and NOT a representation that FaultKey's engine should be relied upon for any specific litigation outcome.

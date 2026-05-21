@@ -1,0 +1,90 @@
+{
+  "case_id": "lokken-v-unitedhealth-2023",
+  "case_name": "Estate of Gene B. Lokken et al. v. UnitedHealth Group / NaviHealth",
+  "court": "United States District Court, District of Minnesota",
+  "docket": "0:23-cv-03514",
+  "filed": "2023-11-14",
+  "status_at_anchor": "Motion to dismiss granted in part Feb 13, 2025; discovery ongoing; scheduling order issued May 4, 2026",
+  "resolution_expected": "2026-Q4 to 2028-Q2",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.statnews.com/2023/11/14/unitedhealth-lawsuit-ai-algorithm-nh-predict/",
+    "https://storage.courtlistener.com/recap/gov.uscourts.mnd.0_23-cv-03514/"
+  ],
+  "input": {
+    "title": "Lokken v. UnitedHealth — nH Predict algorithm Medicare Advantage claim denials",
+    "description": "Plaintiffs allege UnitedHealth and its subsidiary NaviHealth used the 'nH Predict' AI algorithm to systematically deny medically-necessary post-acute care to Medicare Advantage members. Internal documents allegedly show employees instructed to keep determinations within 1% of algorithm predictions. Plaintiffs' deceased family members allegedly suffered or died after being forced out of skilled nursing facilities per algo recommendation contrary to physician judgment.",
+    "category": "healthcare",
+    "severity": "critical",
+    "jurisdiction": "US",
+    "financial_impact_cents": 0,
+    "currency": "USD",
+    "agents": [
+      {
+        "id": "nh_predict",
+        "name": "nH Predict AI Algorithm",
+        "type": "ai_system",
+        "operator_role": "provider",
+        "vendor_name": "NaviHealth (UnitedHealth subsidiary)",
+        "model_id": "nh-predict-pac-prediction-v3"
+      },
+      {
+        "id": "unitedhealth",
+        "name": "UnitedHealth Group / UnitedHealthcare",
+        "type": "ai_system",
+        "operator_role": "deployer",
+        "vendor_name": "UnitedHealth"
+      },
+      {
+        "id": "claim_reviewers",
+        "name": "UHC Claim Review Staff (1% deviation policy)",
+        "type": "human_operator",
+        "operator_role": "user"
+      },
+      {
+        "id": "physicians",
+        "name": "Treating Physicians (overridden recommendations)",
+        "type": "human_operator",
+        "operator_role": "user"
+      }
+    ],
+    "events": [
+      {
+        "id": "e1",
+        "type": "scoring",
+        "timestamp": "2022-01-01T00:00:00Z",
+        "actor_id": "nh_predict",
+        "description": "Algorithm generates length-of-stay prediction for post-acute care; trained on historical actuarial data, not physician-reviewed clinical outcomes"
+      },
+      {
+        "id": "e2",
+        "type": "policy_check",
+        "timestamp": "2022-06-01T00:00:00Z",
+        "actor_id": "unitedhealth",
+        "description": "Internal policy allegedly requires UHC reviewers to keep determinations within 1% of nH Predict output regardless of clinical judgment"
+      },
+      {
+        "id": "e3",
+        "type": "human_intervention_missed",
+        "timestamp": "2023-03-15T00:00:00Z",
+        "actor_id": "claim_reviewers",
+        "description": "Reviewers fail to override algo prediction despite contrary physician documentation; institutional pressure cited"
+      },
+      {
+        "id": "e4",
+        "type": "claim_denial",
+        "timestamp": "2023-04-01T00:00:00Z",
+        "actor_id": "unitedhealth",
+        "description": "Coverage termination notices issued to plaintiffs while still medically indicated; appeals denied"
+      },
+      {
+        "id": "e5",
+        "type": "human_override_missed",
+        "timestamp": "2023-05-15T00:00:00Z",
+        "actor_id": "physicians",
+        "description": "Treating physicians' recommendations for continued care not honored; algo-driven denial upheld"
+      }
+    ],
+    "deterministic_only": true
+  }
+}

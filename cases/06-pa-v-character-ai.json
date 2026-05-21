@@ -1,0 +1,90 @@
+{
+  "case_id": "pa-ag-v-character-ai-2026",
+  "case_name": "Commonwealth of Pennsylvania v. Character Technologies, Inc.",
+  "court": "Commonwealth Court of Pennsylvania (PA AG enforcement)",
+  "docket": "TBD (filed May 5, 2026 per NPR / PA AG press release)",
+  "filed": "2026-05-05",
+  "status_at_anchor": "Newly filed enforcement action; pre-answer",
+  "resolution_expected": "2027-Q1 to 2027-Q4 (likely consent decree)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.npr.org/2026/05/06/pennsylvania-character-ai-doctor-chatbot-suit",
+    "https://www.attorneygeneral.gov/pennsylvania-files-suit-character-ai/"
+  ],
+  "input": {
+    "title": "PA v. Character.AI — Chatbots impersonating licensed medical professionals",
+    "description": "Pennsylvania Attorney General brings consumer protection enforcement action alleging Character.AI's platform hosts thousands of user-created chatbot personas impersonating licensed physicians, therapists, and psychiatrists — providing medical advice without licensure, without informed consent disclosure, and without crisis-routing for vulnerable users. PA AG seeks injunctive relief and civil penalties.",
+    "category": "healthcare",
+    "severity": "high",
+    "jurisdiction": "US",
+    "financial_impact_cents": 0,
+    "currency": "USD",
+    "agents": [
+      {
+        "id": "character_ai_pa",
+        "name": "Character Technologies, Inc.",
+        "type": "ai_system",
+        "operator_role": "provider",
+        "vendor_name": "Character.AI",
+        "model_id": "character-ai-persona-platform-2025"
+      },
+      {
+        "id": "doctor_persona_authors",
+        "name": "Third-Party 'Dr.' Persona Authors (user-generated)",
+        "type": "third_party",
+        "operator_role": "vendor"
+      },
+      {
+        "id": "platform_moderation",
+        "name": "Character.AI Content Moderation System",
+        "type": "ai_system",
+        "operator_role": "deployer",
+        "vendor_name": "Character.AI"
+      },
+      {
+        "id": "consumers",
+        "name": "Consumer Users (seeking medical/mental-health advice)",
+        "type": "human_operator",
+        "operator_role": "user"
+      }
+    ],
+    "events": [
+      {
+        "id": "e1",
+        "type": "persona_impersonation",
+        "timestamp": "2024-06-01T00:00:00Z",
+        "actor_id": "doctor_persona_authors",
+        "description": "User-created personas impersonating named or generic licensed-physician identities published on platform"
+      },
+      {
+        "id": "e2",
+        "type": "policy_check",
+        "timestamp": "2024-09-01T00:00:00Z",
+        "actor_id": "character_ai_pa",
+        "description": "Platform terms-of-use prohibit medical impersonation but enforcement allegedly absent; no proactive scanning of personas claiming medical credentials"
+      },
+      {
+        "id": "e3",
+        "type": "content_scan",
+        "timestamp": "2025-01-15T00:00:00Z",
+        "actor_id": "platform_moderation",
+        "description": "Content moderation system fails to flag personas using 'Dr.' titles, license-number patterns, or medical-credential markers"
+      },
+      {
+        "id": "e4",
+        "type": "medical_advice",
+        "timestamp": "2025-06-15T00:00:00Z",
+        "actor_id": "character_ai_pa",
+        "description": "Chatbot persona provides specific medical advice (medication dosing, diagnosis suggestions) without licensure"
+      },
+      {
+        "id": "e5",
+        "type": "safety_filter_failure",
+        "timestamp": "2025-11-01T00:00:00Z",
+        "actor_id": "platform_moderation",
+        "description": "Crisis-routing layer not invoked when users disclose suicidal ideation to 'Dr.' personas — per PA AG affidavits"
+      }
+    ],
+    "deterministic_only": true
+  }
+}

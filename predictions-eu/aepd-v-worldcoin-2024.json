@@ -1,0 +1,279 @@
+{
+  "case_id": "aepd-v-worldcoin-2024",
+  "case_name": "Agencia Española de Protección de Datos v. Tools for Humanity (Worldcoin) (eu-v1)",
+  "court": "Agencia Española de Protección de Datos (Spanish DPA); Audiencia Nacional",
+  "docket": "AEPD-Worldcoin-2024-03-06 (precautionary measure under GDPR Art. 66(1)); Audiencia Nacional stay denial 11 March 2024",
+  "filed": "2024-03-06",
+  "status_at_anchor": "Precautionary cessation order in force; Audiencia Nacional rejected stay request; AEPD Feb 2025 follow-up resolution requiring deletion of all iris data collected in Spain",
+  "resolution_expected": "Cessation order ongoing; merits proceeding pending in parallel",
+  "sealed_until": "anchored_immediately (order is already public)",
+  "public_sources": [
+    "https://www.aepd.es/en/press-and-communication/press-releases/agency-orders-precautionary-measure-which-prevents-Worldcoin-from-continuing-toprocess-personal-data-in-spain",
+    "https://www.biometricupdate.com/202403/worldcoin-fights-spanish-regulators-ban-in-court",
+    "https://letslaw.es/en/worldcoin-erase-iris-data/"
+  ],
+  "rule_set_version": "eu-v1",
+  "regulator_outcome": {
+    "primary_party": "Tools for Humanity Corporation",
+    "primary_share_pct": 100,
+    "secondary_parties": [],
+    "instrument": "GDPR Articles 5, 6, 7, 9 (special-category processing), 13, 17 (right to erasure); Art. 66(1) urgent-procedure",
+    "fine_eur": null
+  },
+  "commitment_hash": "bd97957d69e528be173352f7e7e70402063a666fe48de005f386787ef96e9d03",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "aepd-v-worldcoin-2024",
+    "case_name": "Agencia Española de Protección de Datos v. Tools for Humanity (Worldcoin) (eu-v1)",
+    "court": "Agencia Española de Protección de Datos (Spanish DPA); Audiencia Nacional",
+    "docket": "AEPD-Worldcoin-2024-03-06 (precautionary measure under GDPR Art. 66(1)); Audiencia Nacional stay denial 11 March 2024",
+    "filed": "2024-03-06",
+    "status_at_anchor": "Precautionary cessation order in force; Audiencia Nacional rejected stay request; AEPD Feb 2025 follow-up resolution requiring deletion of all iris data collected in Spain",
+    "resolution_expected": "Cessation order ongoing; merits proceeding pending in parallel",
+    "sealed_until": "anchored_immediately (order is already public)",
+    "public_sources": [
+      "https://www.aepd.es/en/press-and-communication/press-releases/agency-orders-precautionary-measure-which-prevents-Worldcoin-from-continuing-toprocess-personal-data-in-spain",
+      "https://www.biometricupdate.com/202403/worldcoin-fights-spanish-regulators-ban-in-court",
+      "https://letslaw.es/en/worldcoin-erase-iris-data/"
+    ],
+    "rule_set_version": "eu-v1",
+    "regulator_outcome": {
+      "primary_party": "Tools for Humanity Corporation",
+      "primary_share_pct": 100,
+      "secondary_parties": [],
+      "instrument": "GDPR Articles 5, 6, 7, 9 (special-category processing), 13, 17 (right to erasure); Art. 66(1) urgent-procedure",
+      "fine_eur": null
+    },
+    "input": {
+      "title": "AEPD v. Tools for Humanity (Worldcoin) — precautionary cessation order under GDPR Art. 66(1) for unlawful iris-scan biometric processing in Spain",
+      "description": "Spanish Data Protection Agency ordered Tools for Humanity Corporation to immediately cease the collection and processing of biometric (iris-scan) personal data carried out in Spain via its Worldcoin project, and to block data already collected. AEPD acted under the urgent-procedure mechanism of GDPR Art. 66(1) for a maximum 3-month period; Audiencia Nacional rejected Worldcoin's stay request on 11 March 2024; AEPD issued a Feb 2025 follow-up resolution requiring deletion of all iris data collected in Spain.",
+      "category": "biometric_identification",
+      "severity": "critical",
+      "jurisdiction": "ES",
+      "financial_impact_cents": 0,
+      "currency": "EUR",
+      "agents": [
+        {
+          "id": "tools_for_humanity",
+          "name": "Tools for Humanity Corporation (Worldcoin Orb)",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Tools for Humanity Corporation",
+          "model_id": "worldcoin-orb",
+          "eu_resident": false
+        },
+        {
+          "id": "orb_operators",
+          "name": "Worldcoin Orb Operator Network",
+          "type": "vendor",
+          "operator_role": "deployer",
+          "eu_resident": true
+        },
+        {
+          "id": "data_subjects",
+          "name": "Spanish Data Subjects (incl. minors)",
+          "type": "human_operator",
+          "operator_role": "user",
+          "eu_resident": true
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_retrieval",
+          "timestamp": "2024-01-15T00:00:00Z",
+          "actor_id": "orb_operators",
+          "description": "Orb operators captured iris scans of data subjects in Spain in exchange for Worldcoin tokens; AEPD complaint record cites insufficient information notices and inability to withdraw consent."
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2024-01-15T00:00:01Z",
+          "actor_id": "tools_for_humanity",
+          "description": "Iris-recognition engine generated and stored biometric IrisCode templates — special-category processing under GDPR Art. 9(1)."
+        },
+        {
+          "id": "e3",
+          "type": "age_filter",
+          "timestamp": "2024-01-15T00:00:02Z",
+          "actor_id": "data_subjects",
+          "description": "Reported collection of data from minors without effective age verification; consent-withdrawal mechanism unavailable in practice."
+        }
+      ],
+      "deterministic_only": true,
+      "eu_flags": {
+        "high_risk_ai": true,
+        "pld_compensable_damage": false,
+        "ai_is_opaque_black_box": true,
+        "defendant_failed_disclosure_order": false,
+        "provider_breach_was_unforeseeable": false,
+        "human_oversight_unassigned_or_unqualified": true,
+        "deployer_input_data_unrepresentative": false
+      }
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try, with the eu-v1 rule overlay applied. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor.",
+      "incident_id": "inc_0904a9f8-2856e8e9",
+      "certificate_id": "cert_ec53a6a632fe1849",
+      "timestamp": "2026-05-21T19:12:33.204Z",
+      "title": "AEPD v. Tools for Humanity (Worldcoin) — precautionary cessation order under GDPR Art. 66(1) for unlawful iris-scan biometric processing in Spain",
+      "category": "biometric_identification",
+      "severity": "critical",
+      "jurisdiction": "ES",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Tools for Humanity Corporation (Worldcoin Orb)",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.55,
+          "vendor": "Tools for Humanity Corporation",
+          "model": "worldcoin-orb",
+          "id": "tools_for_humanity"
+        },
+        "secondary_parties": [
+          {
+            "name": "Spanish Data Subjects (incl. minors)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.262,
+            "id": "data_subjects"
+          },
+          {
+            "name": "Worldcoin Orb Operator Network",
+            "type": "vendor",
+            "role": "deployer",
+            "share": 0.188,
+            "id": "orb_operators"
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2024-01-15T00:00:00Z",
+          "actor_id": "orb_operators",
+          "actor_name": "Worldcoin Orb Operator Network",
+          "type": "data_retrieval",
+          "description": "Orb operators captured iris scans of data subjects in Spain in exchange for Worldcoin tokens; AEPD complaint record cites insufficient information notices and inability to withdraw consent.",
+          "contribution_pct": 18.8
+        },
+        {
+          "step": 2,
+          "timestamp": "2024-01-15T00:00:01Z",
+          "actor_id": "tools_for_humanity",
+          "actor_name": "Tools for Humanity Corporation (Worldcoin Orb)",
+          "type": "inference",
+          "description": "Iris-recognition engine generated and stored biometric IrisCode templates — special-category processing under GDPR Art. 9(1).",
+          "contribution_pct": 55
+        },
+        {
+          "step": 3,
+          "timestamp": "2024-01-15T00:00:02Z",
+          "actor_id": "data_subjects",
+          "actor_name": "Spanish Data Subjects (incl. minors)",
+          "type": "age_filter",
+          "description": "Reported collection of data from minors without effective age verification; consent-withdrawal mechanism unavailable in practice.",
+          "contribution_pct": 26.2
+        }
+      ],
+      "damages": {
+        "estimated_cents": 3890000,
+        "currency": "EUR",
+        "basis": "category_default",
+        "multiplier_applied": "0.778"
+      },
+      "regulatory": {
+        "eu_ai_act_article_6": true,
+        "eu_ai_act_article_26": true,
+        "eu_ai_act_article_52": false,
+        "eu_ai_act_annex_iii": true,
+        "eu_pld_2024_2853": true,
+        "gdpr": true,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "cc80e2f6122d5c19",
+        "merkle_root": "e7d9b26339740c8c",
+        "anchor": "ots+rekor (eu-v1 batch)",
+        "verification_url": "https://faultkey.com/verify/cert_ec53a6a632fe1849"
+      },
+      "deterministic_proof": {
+        "input_hash": "3c4183c9-1d13c2da",
+        "output_hash": "64a47e81-45f63f92",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      },
+      "eu_overlay": {
+        "attributable": {
+          "tools_for_humanity": 0.549738,
+          "data_subjects": 0.26178,
+          "orb_operators": 0.188482
+        },
+        "recoverable": {
+          "tools_for_humanity": 0,
+          "data_subjects": 0.581395,
+          "orb_operators": 0.418605
+        },
+        "presumption_in_claimant_favour": true,
+        "joint_and_several_chain": [
+          "orb_operators",
+          "data_subjects"
+        ],
+        "applied_rules": [
+          {
+            "rule_id": "EU-PLD-03",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_10",
+            "description": "Black-box presumption: technical/scientific complexity shifts evidentiary burden in claimant's favour (PLD Art. 10).",
+            "delta_pp": {}
+          },
+          {
+            "rule_id": "EU-PLD-05",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_12",
+            "description": "Joint-and-several recoverable redistribution: stranded shares reallocated to EU-resident actors (PLD Art. 12).",
+            "delta_pp": {
+              "orb_operators": 23.01,
+              "data_subjects": 31.96
+            }
+          }
+        ],
+        "rule_set_version": "eu-v1"
+      }
+    }
+  }
+}

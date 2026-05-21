@@ -1,0 +1,43 @@
+{
+  "schema": "faultkey-anchor-proof-v1",
+  "rule_set_version": "eu-v1",
+  "anchor_root_sha256": "5ca3b54ae36dc59d8ea78d3fea2200b19d7b1635d1726d2357c2bc0036fad49b",
+  "anchor_payload": {
+    "file": "anchor-payload-eu-v1.json",
+    "description": "Canonical eu-v1 manifest of three FaultKey predictions on real EU enforcement matters: AP NL v. Clearview AI (€30.5M, 16 May 2024), Garante IT v. Luka Inc/Replika (€5M, 10 April 2025), AEPD ES v. Tools for Humanity/Worldcoin (precautionary cessation order under GDPR Art. 66(1), 6 March 2024).",
+    "size_bytes": 1693,
+    "sha256_of_file_bytes": "8e469643fe5384363ee8d519b05d8073e3c8647925dc04e63e760f8c7ba0621a"
+  },
+  "anchors": {
+    "sigstore_rekor": {
+      "log_url": "https://rekor.sigstore.dev/api/v1/log/entries/108e9186e8c5677ada1aca198ea8e0c9e86f0646067dd3feb99bafa20d99fd4963b5576eac024992",
+      "log_uuid": "108e9186e8c5677ada1aca198ea8e0c9e86f0646067dd3feb99bafa20d99fd4963b5576eac024992",
+      "log_index": 1593883680,
+      "log_id": "c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d",
+      "integrated_time_unix": 1779390800,
+      "integrated_time_iso": "2026-05-21T19:13:20Z",
+      "verify_command": "rekor-cli get --uuid=108e9186e8c5677ada1aca198ea8e0c9e86f0646067dd3feb99bafa20d99fd4963b5576eac024992",
+      "status": "INCLUDED_IN_TRANSPARENCY_LOG"
+    },
+    "opentimestamps": {
+      "stamp_file": "anchor-payload-eu-v1.json.ots",
+      "calendars_submitted": [
+        "https://a.pool.opentimestamps.org",
+        "https://b.pool.opentimestamps.org",
+        "https://a.pool.eternitywall.com",
+        "https://ots.btc.catallaxy.com"
+      ],
+      "verify_command": "ots verify anchor-payload-eu-v1.json.ots -f anchor-payload-eu-v1.json",
+      "status": "STAMPED_PENDING_BITCOIN_CONFIRMATION",
+      "btc_confirmation_eta": "1-6 hours typically; will upgrade automatically once confirmed"
+    }
+  },
+  "commitment_key": {
+    "algorithm": "ed25519",
+    "public_key_file": "anchor-key-eu-v1.pub.pem",
+    "public_key_pem_inline": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA9nMJ87RvYW420qAiOILXdr4NA6n4ErJAqRdyNf+hep0=\n-----END PUBLIC KEY-----\n",
+    "purpose": "Signed payload for Rekor inclusion. Key is one-time, generated for this commitment, no further use.",
+    "private_key_destruction": "Private key destroyed via shred(1) on 2026-05-21 19:13Z, immediately after Rekor inclusion confirmed at log index 1593883680. The public key remains the sole verification material for this batch."
+  },
+  "verification_one_liner": "rekor-cli get --uuid=108e9186e8c5677ada1aca198ea8e0c9e86f0646067dd3feb99bafa20d99fd4963b5576eac024992 && sha256sum anchor-payload-eu-v1.json && cd ../anchor-log && node run-engine-eu.mjs"
+}

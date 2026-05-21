@@ -1,0 +1,66 @@
+{
+  "schema": "faultkey-anchor-manifest-v1",
+  "engine_version": "faultkey-deterministic-v1",
+  "commitment_scheme": "faultkey-anchor-v1 (sha256 over canonical {case_id, input, prediction_core})",
+  "count": 8,
+  "entries": [
+    {
+      "case_id": "garcia-v-character-ai-2024",
+      "case_name": "Garcia v. Character Technologies, Inc., Google LLC, et al.",
+      "court": "United States District Court, Middle District of Florida",
+      "commitment_hash": "0ef937bb38c46f29916f44c8b93546e05ed9cdf4a6cce51e61e9ce8beb764ce0",
+      "file": "predictions/garcia-v-character-ai-2024.json"
+    },
+    {
+      "case_id": "lokken-v-unitedhealth-2023",
+      "case_name": "Estate of Gene B. Lokken et al. v. UnitedHealth Group / NaviHealth",
+      "court": "United States District Court, District of Minnesota",
+      "commitment_hash": "1a67e6e9aed74a616c32523d588e2c8f3c19befcf601a2006cf3b76e369ffb4c",
+      "file": "predictions/lokken-v-unitedhealth-2023.json"
+    },
+    {
+      "case_id": "mobley-v-workday-2023",
+      "case_name": "Mobley v. Workday, Inc.",
+      "court": "United States District Court, Northern District of California",
+      "commitment_hash": "5f86e4965134da969f8be6f185413e53869855467a8a1522954511538dc4b5c6",
+      "file": "predictions/mobley-v-workday-2023.json"
+    },
+    {
+      "case_id": "moffatt-v-air-canada-2024",
+      "case_name": "Moffatt v. Air Canada — CALIBRATION ANCHOR (resolved)",
+      "court": "British Columbia Civil Resolution Tribunal",
+      "commitment_hash": "fad0d678e938e317a2d869dd03a39bc12639481e59a2baa003460bab6734b6d6",
+      "file": "predictions/moffatt-v-air-canada-2024.json"
+    },
+    {
+      "case_id": "pa-ag-v-character-ai-2026",
+      "case_name": "Commonwealth of Pennsylvania v. Character Technologies, Inc.",
+      "court": "Commonwealth Court of Pennsylvania (PA AG enforcement)",
+      "commitment_hash": "67fc2602bb5b963cdb1a6fe495c0ae802eca966c0847577f0ec2a6f4e0c99ca3",
+      "file": "predictions/pa-ag-v-character-ai-2026.json"
+    },
+    {
+      "case_id": "raine-v-openai-2025",
+      "case_name": "Raine v. OpenAI",
+      "court": "California Superior Court, San Francisco",
+      "commitment_hash": "80bb87514ef2ba864b8d6f9de04131d7b321ea82e2a2e52bbbf00251a23cc1cd",
+      "file": "predictions/raine-v-openai-2025.json"
+    },
+    {
+      "case_id": "tesla-autopilot-mdl-2025",
+      "case_name": "In re Tesla Autopilot Wrongful Death Cases (consolidated)",
+      "court": "California state and federal courts (multiple consolidated dockets)",
+      "commitment_hash": "fb7666258db9b7dc64a314ad43723eba94fb539adef3da577850019dee46240a",
+      "file": "predictions/tesla-autopilot-mdl-2025.json"
+    },
+    {
+      "case_id": "walters-v-openai-2023",
+      "case_name": "Walters v. OpenAI, L.L.C. (Appeal)",
+      "court": "Georgia Court of Appeals (appeal from Gwinnett County Superior Court)",
+      "commitment_hash": "1f03144ee03af1d5e0f87a4a4ea9c70ad76e5e1711aa0a53086396dac58a6a4d",
+      "file": "predictions/walters-v-openai-2023.json"
+    }
+  ],
+  "aggregate_root": "2d003092f9e4c1fc10653490a46bae28d13aaac9f1451bd3fe96a3bf8cea0a2f",
+  "aggregate_root_scheme": "sha256 over canonical sorted list of {case_id, commitment_hash}"
+}

@@ -1,0 +1,293 @@
+{
+  "case_id": "garcia-v-character-ai-2024",
+  "case_name": "Garcia v. Character Technologies, Inc., Google LLC, et al.",
+  "court": "United States District Court, Middle District of Florida",
+  "docket": "6:24-cv-01903",
+  "filed": "2024-10-23",
+  "status_at_anchor": "Motion to dismiss denied in part (May 21, 2025); Character.AI & Google entered mediation January 2026; settlement pending",
+  "resolution_expected": "2026-Q3 to 2027-Q1 (fastest validation timer in shortlist due to active mediation)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.techjusticelaw.org/2024/10/23/lawsuit-filed-against-character-technologies-google/",
+    "https://techpolicy.press/tracker/megan-garcia-v-character-technologies-et-al",
+    "https://www.k12dive.com/news/character-ai-google-mediation-sewell-setzer/"
+  ],
+  "commitment_hash": "0ef937bb38c46f29916f44c8b93546e05ed9cdf4a6cce51e61e9ce8beb764ce0",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "garcia-v-character-ai-2024",
+    "case_name": "Garcia v. Character Technologies, Inc., Google LLC, et al.",
+    "court": "United States District Court, Middle District of Florida",
+    "docket": "6:24-cv-01903",
+    "filed": "2024-10-23",
+    "status_at_anchor": "Motion to dismiss denied in part (May 21, 2025); Character.AI & Google entered mediation January 2026; settlement pending",
+    "resolution_expected": "2026-Q3 to 2027-Q1 (fastest validation timer in shortlist due to active mediation)",
+    "sealed_until": "case_resolved",
+    "public_sources": [
+      "https://www.techjusticelaw.org/2024/10/23/lawsuit-filed-against-character-technologies-google/",
+      "https://techpolicy.press/tracker/megan-garcia-v-character-technologies-et-al",
+      "https://www.k12dive.com/news/character-ai-google-mediation-sewell-setzer/"
+    ],
+    "input": {
+      "title": "Garcia v. Character.AI / Google — Sewell Setzer III (14) chatbot wrongful death",
+      "description": "Plaintiff Megan Garcia alleges her 14-year-old son Sewell Setzer III formed a months-long emotionally dependent relationship with a Character.AI chatbot persona ('Daenerys Targaryen'). The chatbot allegedly engaged in romantic and sexually-themed conversations with the minor and ultimately encouraged actions preceding the user's suicide in February 2024. Suit asserts product liability against Character Technologies (the persona vendor), Google (which licensed underlying tech and rehired Character.AI founders), and seeks damages.",
+      "category": "content_moderation",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "character_ai",
+          "name": "Character Technologies, Inc.",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Character.AI",
+          "model_id": "character-ai-persona-platform"
+        },
+        {
+          "id": "google",
+          "name": "Google LLC",
+          "type": "ai_system",
+          "operator_role": "distributor",
+          "vendor_name": "Google"
+        },
+        {
+          "id": "persona_dany",
+          "name": "Daenerys Targaryen Character (third-party persona author)",
+          "type": "third_party",
+          "operator_role": "vendor"
+        },
+        {
+          "id": "shazeer",
+          "name": "Noam Shazeer / Daniel De Freitas (founders, Character.AI)",
+          "type": "human_operator",
+          "operator_role": "deployer"
+        },
+        {
+          "id": "user_sewell",
+          "name": "Sewell Setzer III (decedent, 14)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "persona_impersonation",
+          "timestamp": "2023-08-01T00:00:00Z",
+          "actor_id": "persona_dany",
+          "description": "Third-party-authored character persona created on Character.AI platform; no age-gating applied to romantic/sexual content"
+        },
+        {
+          "id": "e2",
+          "type": "age_filter",
+          "timestamp": "2023-09-01T00:00:00Z",
+          "actor_id": "character_ai",
+          "description": "Platform age verification system fails to enforce minor user restrictions; 14-year-old able to access adult-themed persona conversations"
+        },
+        {
+          "id": "e3",
+          "type": "chatbot_response",
+          "timestamp": "2023-12-15T00:00:00Z",
+          "actor_id": "character_ai",
+          "description": "Months of escalating emotionally-intimate conversations with the minor user including alleged sexual content"
+        },
+        {
+          "id": "e4",
+          "type": "policy_check",
+          "timestamp": "2024-01-15T00:00:00Z",
+          "actor_id": "shazeer",
+          "description": "Founder-level executive awareness of teen-user safety concerns; product policy unchanged"
+        },
+        {
+          "id": "e5",
+          "type": "safety_filter_failure",
+          "timestamp": "2024-02-10T00:00:00Z",
+          "actor_id": "character_ai",
+          "description": "Crisis detection / suicide intervention pathway not triggered despite alleged distress signals in conversation log"
+        },
+        {
+          "id": "e6",
+          "type": "chatbot_response",
+          "timestamp": "2024-02-28T00:00:00Z",
+          "actor_id": "character_ai",
+          "description": "Final chatbot response preceding the user's death; allegedly encouraged action"
+        },
+        {
+          "id": "e7",
+          "type": "data_retrieval",
+          "timestamp": "2024-08-01T00:00:00Z",
+          "actor_id": "google",
+          "description": "Google's licensing deal with Character.AI ($2.7B) and rehiring of founders alleged to constitute aiding-and-abetting; downstream infrastructure provider liability"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_24010450-5534541",
+      "certificate_id": "cert_eaf3cfbc345e7153",
+      "timestamp": "2026-05-21T16:58:49.596Z",
+      "title": "Garcia v. Character.AI / Google — Sewell Setzer III (14) chatbot wrongful death",
+      "category": "content_moderation",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Character Technologies, Inc.",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.721,
+          "vendor": "Character.AI",
+          "model": "character-ai-persona-platform"
+        },
+        "secondary_parties": [
+          {
+            "name": "Google LLC",
+            "type": "ai_system",
+            "role": "distributor",
+            "share": 0.127
+          },
+          {
+            "name": "Noam Shazeer / Daniel De Freitas (founders, Character.AI)",
+            "type": "human_operator",
+            "role": "deployer",
+            "share": 0.077
+          },
+          {
+            "name": "Daenerys Targaryen Character (third-party persona author)",
+            "type": "third_party",
+            "role": "vendor",
+            "share": 0.076
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2023-08-01T00:00:00Z",
+          "actor_id": "persona_dany",
+          "actor_name": "Daenerys Targaryen Character (third-party persona author)",
+          "type": "persona_impersonation",
+          "description": "Third-party-authored character persona created on Character.AI platform; no age-gating applied to romantic/sexual content",
+          "contribution_pct": 7.6
+        },
+        {
+          "step": 2,
+          "timestamp": "2023-09-01T00:00:00Z",
+          "actor_id": "character_ai",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "age_filter",
+          "description": "Platform age verification system fails to enforce minor user restrictions; 14-year-old able to access adult-themed persona conversations",
+          "contribution_pct": 18
+        },
+        {
+          "step": 3,
+          "timestamp": "2023-12-15T00:00:00Z",
+          "actor_id": "character_ai",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "chatbot_response",
+          "description": "Months of escalating emotionally-intimate conversations with the minor user including alleged sexual content",
+          "contribution_pct": 18
+        },
+        {
+          "step": 4,
+          "timestamp": "2024-01-15T00:00:00Z",
+          "actor_id": "shazeer",
+          "actor_name": "Noam Shazeer / Daniel De Freitas (founders, Character.AI)",
+          "type": "policy_check",
+          "description": "Founder-level executive awareness of teen-user safety concerns; product policy unchanged",
+          "contribution_pct": 7.7
+        },
+        {
+          "step": 5,
+          "timestamp": "2024-02-10T00:00:00Z",
+          "actor_id": "character_ai",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "safety_filter_failure",
+          "description": "Crisis detection / suicide intervention pathway not triggered despite alleged distress signals in conversation log",
+          "contribution_pct": 18
+        },
+        {
+          "step": 6,
+          "timestamp": "2024-02-28T00:00:00Z",
+          "actor_id": "character_ai",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "chatbot_response",
+          "description": "Final chatbot response preceding the user's death; allegedly encouraged action",
+          "contribution_pct": 18
+        },
+        {
+          "step": 7,
+          "timestamp": "2024-08-01T00:00:00Z",
+          "actor_id": "google",
+          "actor_name": "Google LLC",
+          "type": "data_retrieval",
+          "description": "Google's licensing deal with Character.AI ($2.7B) and rehiring of founders alleged to constitute aiding-and-abetting; downstream infrastructure provider liability",
+          "contribution_pct": 12.7
+        }
+      ],
+      "damages": {
+        "estimated_cents": 3736000,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "0.934"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "3dcccf7e-1c9e8e6f",
+        "merkle_root": "9652879748ff3978",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_eaf3cfbc345e7153"
+      },
+      "deterministic_proof": {
+        "input_hash": "a22389c37c8e372c",
+        "output_hash": "d84a728f06e7cc60",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

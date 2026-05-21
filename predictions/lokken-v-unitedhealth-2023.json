@@ -1,0 +1,253 @@
+{
+  "case_id": "lokken-v-unitedhealth-2023",
+  "case_name": "Estate of Gene B. Lokken et al. v. UnitedHealth Group / NaviHealth",
+  "court": "United States District Court, District of Minnesota",
+  "docket": "0:23-cv-03514",
+  "filed": "2023-11-14",
+  "status_at_anchor": "Motion to dismiss granted in part Feb 13, 2025; discovery ongoing; scheduling order issued May 4, 2026",
+  "resolution_expected": "2026-Q4 to 2028-Q2",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.statnews.com/2023/11/14/unitedhealth-lawsuit-ai-algorithm-nh-predict/",
+    "https://storage.courtlistener.com/recap/gov.uscourts.mnd.0_23-cv-03514/"
+  ],
+  "commitment_hash": "1a67e6e9aed74a616c32523d588e2c8f3c19befcf601a2006cf3b76e369ffb4c",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "lokken-v-unitedhealth-2023",
+    "case_name": "Estate of Gene B. Lokken et al. v. UnitedHealth Group / NaviHealth",
+    "court": "United States District Court, District of Minnesota",
+    "docket": "0:23-cv-03514",
+    "filed": "2023-11-14",
+    "status_at_anchor": "Motion to dismiss granted in part Feb 13, 2025; discovery ongoing; scheduling order issued May 4, 2026",
+    "resolution_expected": "2026-Q4 to 2028-Q2",
+    "sealed_until": "case_resolved",
+    "public_sources": [
+      "https://www.statnews.com/2023/11/14/unitedhealth-lawsuit-ai-algorithm-nh-predict/",
+      "https://storage.courtlistener.com/recap/gov.uscourts.mnd.0_23-cv-03514/"
+    ],
+    "input": {
+      "title": "Lokken v. UnitedHealth — nH Predict algorithm Medicare Advantage claim denials",
+      "description": "Plaintiffs allege UnitedHealth and its subsidiary NaviHealth used the 'nH Predict' AI algorithm to systematically deny medically-necessary post-acute care to Medicare Advantage members. Internal documents allegedly show employees instructed to keep determinations within 1% of algorithm predictions. Plaintiffs' deceased family members allegedly suffered or died after being forced out of skilled nursing facilities per algo recommendation contrary to physician judgment.",
+      "category": "healthcare",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "nh_predict",
+          "name": "nH Predict AI Algorithm",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "NaviHealth (UnitedHealth subsidiary)",
+          "model_id": "nh-predict-pac-prediction-v3"
+        },
+        {
+          "id": "unitedhealth",
+          "name": "UnitedHealth Group / UnitedHealthcare",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "UnitedHealth"
+        },
+        {
+          "id": "claim_reviewers",
+          "name": "UHC Claim Review Staff (1% deviation policy)",
+          "type": "human_operator",
+          "operator_role": "user"
+        },
+        {
+          "id": "physicians",
+          "name": "Treating Physicians (overridden recommendations)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "scoring",
+          "timestamp": "2022-01-01T00:00:00Z",
+          "actor_id": "nh_predict",
+          "description": "Algorithm generates length-of-stay prediction for post-acute care; trained on historical actuarial data, not physician-reviewed clinical outcomes"
+        },
+        {
+          "id": "e2",
+          "type": "policy_check",
+          "timestamp": "2022-06-01T00:00:00Z",
+          "actor_id": "unitedhealth",
+          "description": "Internal policy allegedly requires UHC reviewers to keep determinations within 1% of nH Predict output regardless of clinical judgment"
+        },
+        {
+          "id": "e3",
+          "type": "human_intervention_missed",
+          "timestamp": "2023-03-15T00:00:00Z",
+          "actor_id": "claim_reviewers",
+          "description": "Reviewers fail to override algo prediction despite contrary physician documentation; institutional pressure cited"
+        },
+        {
+          "id": "e4",
+          "type": "claim_denial",
+          "timestamp": "2023-04-01T00:00:00Z",
+          "actor_id": "unitedhealth",
+          "description": "Coverage termination notices issued to plaintiffs while still medically indicated; appeals denied"
+        },
+        {
+          "id": "e5",
+          "type": "human_override_missed",
+          "timestamp": "2023-05-15T00:00:00Z",
+          "actor_id": "physicians",
+          "description": "Treating physicians' recommendations for continued care not honored; algo-driven denial upheld"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_54baf718-75e8b609",
+      "certificate_id": "cert_a1f20f747f5fb19b",
+      "timestamp": "2026-05-21T16:58:49.600Z",
+      "title": "Lokken v. UnitedHealth — nH Predict algorithm Medicare Advantage claim denials",
+      "category": "healthcare",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "verdict": "DEPLOYER_SYSTEM_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "UnitedHealth Group / UnitedHealthcare",
+          "type": "ai_system",
+          "role": "deployer",
+          "share": 0.523,
+          "vendor": "UnitedHealth",
+          "model": null
+        },
+        "secondary_parties": [
+          {
+            "name": "nH Predict AI Algorithm",
+            "type": "ai_system",
+            "role": "provider",
+            "share": 0.172
+          },
+          {
+            "name": "Treating Physicians (overridden recommendations)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.172
+          },
+          {
+            "name": "UHC Claim Review Staff (1% deviation policy)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.133
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2022-01-01T00:00:00Z",
+          "actor_id": "nh_predict",
+          "actor_name": "nH Predict AI Algorithm",
+          "type": "scoring",
+          "description": "Algorithm generates length-of-stay prediction for post-acute care; trained on historical actuarial data, not physician-reviewed clinical outcomes",
+          "contribution_pct": 17.2
+        },
+        {
+          "step": 2,
+          "timestamp": "2022-06-01T00:00:00Z",
+          "actor_id": "unitedhealth",
+          "actor_name": "UnitedHealth Group / UnitedHealthcare",
+          "type": "policy_check",
+          "description": "Internal policy allegedly requires UHC reviewers to keep determinations within 1% of nH Predict output regardless of clinical judgment",
+          "contribution_pct": 26.1
+        },
+        {
+          "step": 3,
+          "timestamp": "2023-03-15T00:00:00Z",
+          "actor_id": "claim_reviewers",
+          "actor_name": "UHC Claim Review Staff (1% deviation policy)",
+          "type": "human_intervention_missed",
+          "description": "Reviewers fail to override algo prediction despite contrary physician documentation; institutional pressure cited",
+          "contribution_pct": 13.3
+        },
+        {
+          "step": 4,
+          "timestamp": "2023-04-01T00:00:00Z",
+          "actor_id": "unitedhealth",
+          "actor_name": "UnitedHealth Group / UnitedHealthcare",
+          "type": "claim_denial",
+          "description": "Coverage termination notices issued to plaintiffs while still medically indicated; appeals denied",
+          "contribution_pct": 26.1
+        },
+        {
+          "step": 5,
+          "timestamp": "2023-05-15T00:00:00Z",
+          "actor_id": "physicians",
+          "actor_name": "Treating Physicians (overridden recommendations)",
+          "type": "human_override_missed",
+          "description": "Treating physicians' recommendations for continued care not honored; algo-driven denial upheld",
+          "contribution_pct": 17.2
+        }
+      ],
+      "damages": {
+        "estimated_cents": 18960000,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "1.264"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "31df6d4e-108d2c5f",
+        "merkle_root": "784656d8-591417c9",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_a1f20f747f5fb19b"
+      },
+      "deterministic_proof": {
+        "input_hash": "fadbfbae24764541",
+        "output_hash": "b1b2f5446f1f4bab",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

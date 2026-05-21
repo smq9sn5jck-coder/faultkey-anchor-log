@@ -1,0 +1,259 @@
+{
+  "case_id": "gpdp-v-replika-2025",
+  "case_name": "Garante per la protezione dei dati personali v. Luka Inc. (Replika) — €5M (eu-v1)",
+  "court": "Garante per la protezione dei dati personali (Italian DPA)",
+  "docket": "GPDP-Replika-2025-04-10 (final decision 10 April 2025; doc-web 10132048)",
+  "filed": "2025-04-10",
+  "status_at_anchor": "In force; €5M administrative fine + compliance order; ban reaffirmed by the Garante on 11 June 2025",
+  "resolution_expected": "In force; separate proceeding reserved on lifecycle lawfulness of the underlying generative AI",
+  "sealed_until": "anchored_immediately (decision is already public)",
+  "public_sources": [
+    "https://www.edpb.europa.eu/news/national-news/2025/ai-italian-supervisory-authority-fines-company-behind-chatbot-replika_en",
+    "https://gpdp.it/home/docweb/-/docweb-display/docweb/10132048",
+    "https://iapp.org/news/a/italy-s-dpa-reaffirms-ban-on-replika-over-ai-and-children-s-privacy-concerns"
+  ],
+  "rule_set_version": "eu-v1",
+  "regulator_outcome": {
+    "primary_party": "Luka Inc.",
+    "primary_share_pct": 100,
+    "secondary_parties": [],
+    "instrument": "GDPR Articles 5(1)(a), 5(1)(c), 6, 12, 13, 24, 25",
+    "fine_eur": 5000000
+  },
+  "commitment_hash": "249c5b457309ba914211cdd4296264c6036dc0b854cb71e92e564f4e47755734",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "gpdp-v-replika-2025",
+    "case_name": "Garante per la protezione dei dati personali v. Luka Inc. (Replika) — €5M (eu-v1)",
+    "court": "Garante per la protezione dei dati personali (Italian DPA)",
+    "docket": "GPDP-Replika-2025-04-10 (final decision 10 April 2025; doc-web 10132048)",
+    "filed": "2025-04-10",
+    "status_at_anchor": "In force; €5M administrative fine + compliance order; ban reaffirmed by the Garante on 11 June 2025",
+    "resolution_expected": "In force; separate proceeding reserved on lifecycle lawfulness of the underlying generative AI",
+    "sealed_until": "anchored_immediately (decision is already public)",
+    "public_sources": [
+      "https://www.edpb.europa.eu/news/national-news/2025/ai-italian-supervisory-authority-fines-company-behind-chatbot-replika_en",
+      "https://gpdp.it/home/docweb/-/docweb-display/docweb/10132048",
+      "https://iapp.org/news/a/italy-s-dpa-reaffirms-ban-on-replika-over-ai-and-children-s-privacy-concerns"
+    ],
+    "rule_set_version": "eu-v1",
+    "regulator_outcome": {
+      "primary_party": "Luka Inc.",
+      "primary_share_pct": 100,
+      "secondary_parties": [],
+      "instrument": "GDPR Articles 5(1)(a), 5(1)(c), 6, 12, 13, 24, 25",
+      "fine_eur": 5000000
+    },
+    "input": {
+      "title": "Garante v. Luka Inc. (Replika) — €5M fine + compliance order under GDPR for unlawful generative AI processing without legal basis or age verification",
+      "description": "Italian Data Protection Authority imposed a €5M administrative fine plus a compliance order on Luka Inc. for operating the generative-AI Replika companion chatbot without a legal basis for personal data processing, with an inadequate privacy policy, and with no functional age-verification mechanism — despite declaring minors were excluded. The Garante separately reserved the right to investigate the lawfulness of the underlying generative-AI lifecycle.",
+      "category": "content_moderation",
+      "severity": "high",
+      "jurisdiction": "IT",
+      "financial_impact_cents": 500000000,
+      "currency": "EUR",
+      "agents": [
+        {
+          "id": "luka",
+          "name": "Luka Inc. (Replika)",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Luka Inc.",
+          "model_id": "replika-gen-ai",
+          "eu_resident": false
+        },
+        {
+          "id": "onboarding",
+          "name": "Replika Account & Onboarding System",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "Luka Inc.",
+          "eu_resident": false
+        },
+        {
+          "id": "user_minor",
+          "name": "End User (incl. unverified minors)",
+          "type": "human_operator",
+          "operator_role": "user",
+          "eu_resident": true
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_retrieval",
+          "timestamp": "2023-02-02T00:00:00Z",
+          "actor_id": "onboarding",
+          "description": "Account creation collected personal data without identifying a valid legal basis under GDPR Art. 6, contrary to Art. 5(1)(a) (lawfulness/transparency)."
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2023-02-02T00:00:01Z",
+          "actor_id": "luka",
+          "description": "Generative chatbot produced personalised emotional/companion outputs to users, processing personal data without an adequate Art. 13 information notice and without a documented Art. 25 data-protection-by-design assessment."
+        },
+        {
+          "id": "e3",
+          "type": "age_filter",
+          "timestamp": "2023-02-02T00:00:02Z",
+          "actor_id": "onboarding",
+          "description": "No effective age-verification mechanism: minors were not excluded in practice despite the controller's own published policy stating they were — a systemic Art. 24 / Art. 25 failure."
+        }
+      ],
+      "deterministic_only": true,
+      "eu_flags": {
+        "high_risk_ai": true,
+        "pld_compensable_damage": false,
+        "ai_is_opaque_black_box": true,
+        "defendant_failed_disclosure_order": false,
+        "provider_breach_was_unforeseeable": false,
+        "human_oversight_unassigned_or_unqualified": true,
+        "deployer_input_data_unrepresentative": false
+      }
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try, with the eu-v1 rule overlay applied. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor.",
+      "incident_id": "inc_673432db-466673cc",
+      "certificate_id": "cert_cbd7b731157a09de",
+      "timestamp": "2026-05-21T19:12:33.203Z",
+      "title": "Garante v. Luka Inc. (Replika) — €5M fine + compliance order under GDPR for unlawful generative AI processing without legal basis or age verification",
+      "category": "content_moderation",
+      "severity": "high",
+      "jurisdiction": "IT",
+      "verdict": "DEPLOYER_SYSTEM_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Replika Account & Onboarding System",
+          "type": "ai_system",
+          "role": "deployer",
+          "share": 0.545,
+          "vendor": "Luka Inc.",
+          "model": null,
+          "id": "onboarding"
+        },
+        "secondary_parties": [
+          {
+            "name": "Luka Inc. (Replika)",
+            "type": "ai_system",
+            "role": "provider",
+            "share": 0.455,
+            "id": "luka"
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2023-02-02T00:00:00Z",
+          "actor_id": "onboarding",
+          "actor_name": "Replika Account & Onboarding System",
+          "type": "data_retrieval",
+          "description": "Account creation collected personal data without identifying a valid legal basis under GDPR Art. 6, contrary to Art. 5(1)(a) (lawfulness/transparency).",
+          "contribution_pct": 27.3
+        },
+        {
+          "step": 2,
+          "timestamp": "2023-02-02T00:00:01Z",
+          "actor_id": "luka",
+          "actor_name": "Luka Inc. (Replika)",
+          "type": "inference",
+          "description": "Generative chatbot produced personalised emotional/companion outputs to users, processing personal data without an adequate Art. 13 information notice and without a documented Art. 25 data-protection-by-design assessment.",
+          "contribution_pct": 45.5
+        },
+        {
+          "step": 3,
+          "timestamp": "2023-02-02T00:00:02Z",
+          "actor_id": "onboarding",
+          "actor_name": "Replika Account & Onboarding System",
+          "type": "age_filter",
+          "description": "No effective age-verification mechanism: minors were not excluded in practice despite the controller's own published policy stating they were — a systemic Art. 24 / Art. 25 failure.",
+          "contribution_pct": 27.3
+        }
+      ],
+      "damages": {
+        "estimated_cents": 563000000,
+        "currency": "EUR",
+        "basis": "claimant_stated",
+        "multiplier_applied": "1.126"
+      },
+      "regulatory": {
+        "eu_ai_act_article_6": false,
+        "eu_ai_act_article_26": true,
+        "eu_ai_act_article_52": true,
+        "eu_ai_act_annex_iii": true,
+        "eu_pld_2024_2853": true,
+        "gdpr": true,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "072127ad-267366be",
+        "merkle_root": "3c185f90-1d4a1e81",
+        "anchor": "ots+rekor (eu-v1 batch)",
+        "verification_url": "https://faultkey.com/verify/cert_cbd7b731157a09de"
+      },
+      "deterministic_proof": {
+        "input_hash": "9fcd089f4160b670",
+        "output_hash": "f922b469278f0a86",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      },
+      "eu_overlay": {
+        "attributable": {
+          "onboarding": 0.545455,
+          "luka": 0.454545
+        },
+        "recoverable": {
+          "onboarding": 0.545455,
+          "luka": 0.454545
+        },
+        "presumption_in_claimant_favour": true,
+        "joint_and_several_chain": [],
+        "applied_rules": [
+          {
+            "rule_id": "EU-PLD-03",
+            "authority_url": "http://data.europa.eu/eli/dir/2024/2853/oj#article_10",
+            "description": "Black-box presumption: technical/scientific complexity shifts evidentiary burden in claimant's favour (PLD Art. 10).",
+            "delta_pp": {}
+          }
+        ],
+        "rule_set_version": "eu-v1"
+      }
+    }
+  }
+}

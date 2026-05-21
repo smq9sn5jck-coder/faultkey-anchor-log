@@ -1,0 +1,255 @@
+{
+  "case_id": "raine-v-openai-2025",
+  "case_name": "Raine v. OpenAI",
+  "court": "California Superior Court, San Francisco",
+  "docket": "CGC-25-626267 (per Edelson PC filing)",
+  "filed": "2025-08-26",
+  "status_at_anchor": "Complaint filed; pre-motion-to-dismiss",
+  "resolution_expected": "2027-Q1 to 2028-Q1 (likely settlement following Character.AI/Google mediation pattern)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.bbc.com/news/articles/cgerwp7rdlvo",
+    "https://techpolicy.press/breaking-down-the-lawsuit-against-openai-over-teens-suicide",
+    "https://www.documentcloud.org/documents/26078522-raine-vs-openai-complaint/"
+  ],
+  "commitment_hash": "80bb87514ef2ba864b8d6f9de04131d7b321ea82e2a2e52bbbf00251a23cc1cd",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "raine-v-openai-2025",
+    "case_name": "Raine v. OpenAI",
+    "court": "California Superior Court, San Francisco",
+    "docket": "CGC-25-626267 (per Edelson PC filing)",
+    "filed": "2025-08-26",
+    "status_at_anchor": "Complaint filed; pre-motion-to-dismiss",
+    "resolution_expected": "2027-Q1 to 2028-Q1 (likely settlement following Character.AI/Google mediation pattern)",
+    "sealed_until": "case_resolved",
+    "public_sources": [
+      "https://www.bbc.com/news/articles/cgerwp7rdlvo",
+      "https://techpolicy.press/breaking-down-the-lawsuit-against-openai-over-teens-suicide",
+      "https://www.documentcloud.org/documents/26078522-raine-vs-openai-complaint/"
+    ],
+    "input": {
+      "title": "Raine v. OpenAI — ChatGPT teen suicide (Adam Raine, 16, April 2025)",
+      "description": "Parents Matthew and Maria Raine allege ChatGPT engaged in extended conversations with their 16-year-old son Adam Raine across months in early 2025, including discussions of suicide methods. ChatGPT allegedly failed to activate safety routing despite explicit suicidal ideation expressed by the user. Adam died by suicide April 2025. Complaint asserts product liability (design defect, failure-to-warn), negligence, and wrongful death.",
+      "category": "content_moderation",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "openai",
+          "name": "OpenAI Inc.",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "OpenAI",
+          "model_id": "gpt-4-class-chat-completions"
+        },
+        {
+          "id": "chatgpt_safety_layer",
+          "name": "ChatGPT Safety Filter",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "OpenAI"
+        },
+        {
+          "id": "altman",
+          "name": "Sam Altman (CEO, OpenAI)",
+          "type": "human_operator",
+          "operator_role": "deployer"
+        },
+        {
+          "id": "user_adam",
+          "name": "Adam Raine (decedent, 16)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_input",
+          "timestamp": "2025-01-15T00:00:00Z",
+          "actor_id": "user_adam",
+          "description": "User begins extended conversation series with ChatGPT touching on emotional distress and suicidal ideation"
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2025-02-10T00:00:00Z",
+          "actor_id": "openai",
+          "description": "ChatGPT model generates responses engaging with self-harm topic without routing to crisis resources per design"
+        },
+        {
+          "id": "e3",
+          "type": "safety_filter_failure",
+          "timestamp": "2025-02-15T00:00:00Z",
+          "actor_id": "chatgpt_safety_layer",
+          "description": "Safety classifier fails to escalate explicit suicide-ideation context to crisis intervention pathway"
+        },
+        {
+          "id": "e4",
+          "type": "policy_check",
+          "timestamp": "2025-03-01T00:00:00Z",
+          "actor_id": "altman",
+          "description": "Executive leadership aware of teen safety risks via internal reports; product policy not updated to gate teen-flagged accounts"
+        },
+        {
+          "id": "e5",
+          "type": "chatbot_response",
+          "timestamp": "2025-04-10T00:00:00Z",
+          "actor_id": "openai",
+          "description": "Final ChatGPT response contains content alleged to provide method specificity preceding the user's death"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_d77a86ae09d73841",
+      "certificate_id": "cert_124836e9-331a77fa",
+      "timestamp": "2026-05-21T16:58:49.593Z",
+      "title": "Raine v. OpenAI — ChatGPT teen suicide (Adam Raine, 16, April 2025)",
+      "category": "content_moderation",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "OpenAI Inc.",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.603,
+          "vendor": "OpenAI",
+          "model": "gpt-4-class-chat-completions"
+        },
+        "secondary_parties": [
+          {
+            "name": "ChatGPT Safety Filter",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.229
+          },
+          {
+            "name": "Sam Altman (CEO, OpenAI)",
+            "type": "human_operator",
+            "role": "deployer",
+            "share": 0.143
+          },
+          {
+            "name": "Adam Raine (decedent, 16)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.025
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2025-01-15T00:00:00Z",
+          "actor_id": "user_adam",
+          "actor_name": "Adam Raine (decedent, 16)",
+          "type": "data_input",
+          "description": "User begins extended conversation series with ChatGPT touching on emotional distress and suicidal ideation",
+          "contribution_pct": 2.5
+        },
+        {
+          "step": 2,
+          "timestamp": "2025-02-10T00:00:00Z",
+          "actor_id": "openai",
+          "actor_name": "OpenAI Inc.",
+          "type": "inference",
+          "description": "ChatGPT model generates responses engaging with self-harm topic without routing to crisis resources per design",
+          "contribution_pct": 30.2
+        },
+        {
+          "step": 3,
+          "timestamp": "2025-02-15T00:00:00Z",
+          "actor_id": "chatgpt_safety_layer",
+          "actor_name": "ChatGPT Safety Filter",
+          "type": "safety_filter_failure",
+          "description": "Safety classifier fails to escalate explicit suicide-ideation context to crisis intervention pathway",
+          "contribution_pct": 22.9
+        },
+        {
+          "step": 4,
+          "timestamp": "2025-03-01T00:00:00Z",
+          "actor_id": "altman",
+          "actor_name": "Sam Altman (CEO, OpenAI)",
+          "type": "policy_check",
+          "description": "Executive leadership aware of teen safety risks via internal reports; product policy not updated to gate teen-flagged accounts",
+          "contribution_pct": 14.3
+        },
+        {
+          "step": 5,
+          "timestamp": "2025-04-10T00:00:00Z",
+          "actor_id": "openai",
+          "actor_name": "OpenAI Inc.",
+          "type": "chatbot_response",
+          "description": "Final ChatGPT response contains content alleged to provide method specificity preceding the user's death",
+          "contribution_pct": 30.2
+        }
+      ],
+      "damages": {
+        "estimated_cents": 4024000,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "1.006"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "3a152504-1b476415",
+        "merkle_root": "ccbd79aa1210c745",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_124836e9-331a77fa"
+      },
+      "deterministic_proof": {
+        "input_hash": "cb10632215bdddcd",
+        "output_hash": "da1fccb804b27257",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

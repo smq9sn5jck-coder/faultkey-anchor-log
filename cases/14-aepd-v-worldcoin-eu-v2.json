@@ -1,0 +1,63 @@
+{
+  "case_id": "aepd-v-worldcoin-2024-eu-v2",
+  "case_name": "Agencia Española de Protección de Datos v. Tools for Humanity (Worldcoin) (eu-v2)",
+  "court": "Agencia Española de Protección de Datos (Spanish DPA); Audiencia Nacional",
+  "docket": "AEPD-Worldcoin-2024-03-06 (precautionary measure under GDPR Art. 66(1)); Audiencia Nacional stay denial 11 March 2024",
+  "filed": "2024-03-06",
+  "status_at_anchor": "Precautionary cessation order in force; Audiencia Nacional rejected stay request; AEPD Feb 2025 follow-up resolution requiring deletion of all iris data collected in Spain",
+  "resolution_expected": "Cessation order ongoing; merits proceeding pending in parallel",
+  "sealed_until": "anchored_immediately (order is already public)",
+  "public_sources": [
+    "https://www.aepd.es/en/press-and-communication/press-releases/agency-orders-precautionary-measure-which-prevents-Worldcoin-from-continuing-toprocess-personal-data-in-spain",
+    "https://www.biometricupdate.com/202403/worldcoin-fights-spanish-regulators-ban-in-court",
+    "https://letslaw.es/en/worldcoin-erase-iris-data/"
+  ],
+  "rule_set_version": "eu-v2",
+  "regulator_outcome": {
+    "primary_party": "Tools for Humanity Corporation",
+    "primary_share_pct": 100,
+    "secondary_parties": [],
+    "instrument": "GDPR Articles 5, 6, 7, 9 (special-category processing), 13, 17 (right to erasure); Art. 66(1) urgent-procedure",
+    "fine_eur": null
+  },
+  "input": {
+    "title": "AEPD v. Tools for Humanity (Worldcoin) — precautionary cessation order under GDPR Art. 66(1) for unlawful iris-scan biometric processing in Spain",
+    "description": "Spanish Data Protection Agency ordered Tools for Humanity Corporation to immediately cease the collection and processing of biometric (iris-scan) personal data carried out in Spain via its Worldcoin project, and to block data already collected. AEPD acted under the urgent-procedure mechanism of GDPR Art. 66(1) for a maximum 3-month period; Audiencia Nacional rejected Worldcoin's stay request on 11 March 2024; AEPD issued a Feb 2025 follow-up resolution requiring deletion of all iris data collected in Spain.",
+    "category": "biometric_identification",
+    "severity": "critical",
+    "jurisdiction": "ES",
+    "financial_impact_cents": 0,
+    "currency": "EUR",
+    "agents": [
+      { "id": "tools_for_humanity", "name": "Tools for Humanity Corporation (Worldcoin Orb)", "type": "ai_system", "operator_role": "provider", "vendor_name": "Tools for Humanity Corporation", "model_id": "worldcoin-orb", "eu_resident": false },
+      { "id": "orb_operators", "name": "Worldcoin Orb Operator Network", "type": "vendor", "operator_role": "deployer", "eu_resident": true },
+      { "id": "data_subjects", "name": "Spanish Data Subjects (incl. minors)", "type": "human_operator", "operator_role": "user", "eu_resident": true }
+    ],
+    "events": [
+      { "id": "e1", "type": "data_retrieval", "timestamp": "2024-01-15T00:00:00Z", "actor_id": "orb_operators", "description": "Orb operators captured iris scans of data subjects in Spain in exchange for Worldcoin tokens; AEPD complaint record cites insufficient information notices and inability to withdraw consent." },
+      { "id": "e2", "type": "inference", "timestamp": "2024-01-15T00:00:01Z", "actor_id": "tools_for_humanity", "description": "Iris-recognition engine generated and stored biometric IrisCode templates — special-category processing under GDPR Art. 9(1)." },
+      { "id": "e3", "type": "age_filter", "timestamp": "2024-01-15T00:00:02Z", "actor_id": "data_subjects", "description": "Reported collection of data from minors without effective age verification; consent-withdrawal mechanism unavailable in practice." }
+    ],
+    "deterministic_only": true,
+    "eu_flags": {
+      "high_risk_ai": true,
+      "pld_compensable_damage": false,
+      "ai_is_opaque_black_box": true,
+      "defendant_failed_disclosure_order": false,
+      "provider_breach_was_unforeseeable": false,
+      "human_oversight_unassigned_or_unqualified": true,
+      "deployer_input_data_unrepresentative": false,
+      "continuous_learning_post_deployment": false,
+      "post_market_under_manufacturer_control": true,
+      "failed_cybersecurity_requirements": false,
+      "interconnection_with_related_products_foreseeable": false,
+      "scoring_drawn_strongly_on_by_third_party": false,
+      "non_material_damages_only": true,
+      "material_damages_present": false,
+      "deployer_is_hosting_provider": false,
+      "actual_knowledge_of_illegal_content": false,
+      "fria_required": true,
+      "fria_completed": false
+    }
+  }
+}

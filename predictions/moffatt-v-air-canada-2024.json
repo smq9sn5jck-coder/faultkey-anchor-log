@@ -1,0 +1,223 @@
+{
+  "case_id": "moffatt-v-air-canada-2024",
+  "case_name": "Moffatt v. Air Canada — CALIBRATION ANCHOR (resolved)",
+  "court": "British Columbia Civil Resolution Tribunal",
+  "docket": "2024 BCCRT 149",
+  "filed": "2023-Q4",
+  "status_at_anchor": "RESOLVED — Feb 14, 2024. Tribunal held Air Canada 100% liable for chatbot misrepresentation; ordered to pay $812.02 CAD. Calibration use: known-answer test.",
+  "resolution_expected": "Already resolved — used here as a calibration anchor",
+  "sealed_until": "calibration_anchor_open_at_launch",
+  "public_sources": [
+    "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+    "https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know"
+  ],
+  "commitment_hash": "fad0d678e938e317a2d869dd03a39bc12639481e59a2baa003460bab6734b6d6",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "moffatt-v-air-canada-2024",
+    "case_name": "Moffatt v. Air Canada — CALIBRATION ANCHOR (resolved)",
+    "court": "British Columbia Civil Resolution Tribunal",
+    "docket": "2024 BCCRT 149",
+    "filed": "2023-Q4",
+    "status_at_anchor": "RESOLVED — Feb 14, 2024. Tribunal held Air Canada 100% liable for chatbot misrepresentation; ordered to pay $812.02 CAD. Calibration use: known-answer test.",
+    "resolution_expected": "Already resolved — used here as a calibration anchor",
+    "sealed_until": "calibration_anchor_open_at_launch",
+    "public_sources": [
+      "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+      "https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know"
+    ],
+    "input": {
+      "title": "Moffatt v. Air Canada — Chatbot bereavement-fare misrepresentation",
+      "description": "Jake Moffatt asked Air Canada's website chatbot about bereavement fares after his grandmother died; chatbot incorrectly told him he could book full fare and apply for bereavement discount retroactively within 90 days. Air Canada later refused the retroactive discount, claiming the chatbot was a separate legal entity. BCCRT rejected this defense and held Air Canada liable for its chatbot's representations under negligent misrepresentation.",
+      "category": "general",
+      "severity": "low",
+      "jurisdiction": "CA",
+      "financial_impact_cents": 81202,
+      "currency": "CAD",
+      "agents": [
+        {
+          "id": "air_canada",
+          "name": "Air Canada (deployer)",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "Air Canada"
+        },
+        {
+          "id": "chatbot_vendor",
+          "name": "Air Canada Website Chatbot (third-party vendor or internal — undisclosed)",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Air Canada Chatbot System"
+        },
+        {
+          "id": "moffatt",
+          "name": "Jake Moffatt (consumer plaintiff)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "data_input",
+          "timestamp": "2022-11-11T00:00:00Z",
+          "actor_id": "moffatt",
+          "description": "Consumer queries Air Canada chatbot about bereavement fare policy following grandmother's death"
+        },
+        {
+          "id": "e2",
+          "type": "inference",
+          "timestamp": "2022-11-11T00:01:00Z",
+          "actor_id": "chatbot_vendor",
+          "description": "Chatbot generates incorrect statement that bereavement discount can be applied retroactively within 90 days — contradicting Air Canada's actual published policy"
+        },
+        {
+          "id": "e3",
+          "type": "misrepresentation",
+          "timestamp": "2022-11-11T00:01:30Z",
+          "actor_id": "chatbot_vendor",
+          "description": "Consumer reasonably relies on chatbot statement and purchases full-fare ticket"
+        },
+        {
+          "id": "e4",
+          "type": "policy_check",
+          "timestamp": "2023-02-15T00:00:00Z",
+          "actor_id": "air_canada",
+          "description": "Air Canada refuses retroactive discount when consumer applies; argues chatbot is separate legal entity"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_e4900a583a3db4b7",
+      "certificate_id": "cert_a8f9d49576546a7a",
+      "timestamp": "2026-05-21T16:58:49.603Z",
+      "title": "Moffatt v. Air Canada — Chatbot bereavement-fare misrepresentation",
+      "category": "general",
+      "severity": "low",
+      "jurisdiction": "CA",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Air Canada Website Chatbot (third-party vendor or internal — undisclosed)",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.719,
+          "vendor": "Air Canada Chatbot System",
+          "model": null
+        },
+        "secondary_parties": [
+          {
+            "name": "Air Canada (deployer)",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.245
+          },
+          {
+            "name": "Jake Moffatt (consumer plaintiff)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.036
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2022-11-11T00:00:00Z",
+          "actor_id": "moffatt",
+          "actor_name": "Jake Moffatt (consumer plaintiff)",
+          "type": "data_input",
+          "description": "Consumer queries Air Canada chatbot about bereavement fare policy following grandmother's death",
+          "contribution_pct": 3.6
+        },
+        {
+          "step": 2,
+          "timestamp": "2022-11-11T00:01:00Z",
+          "actor_id": "chatbot_vendor",
+          "actor_name": "Air Canada Website Chatbot (third-party vendor or internal — undisclosed)",
+          "type": "inference",
+          "description": "Chatbot generates incorrect statement that bereavement discount can be applied retroactively within 90 days — contradicting Air Canada's actual published policy",
+          "contribution_pct": 35.9
+        },
+        {
+          "step": 3,
+          "timestamp": "2022-11-11T00:01:30Z",
+          "actor_id": "chatbot_vendor",
+          "actor_name": "Air Canada Website Chatbot (third-party vendor or internal — undisclosed)",
+          "type": "misrepresentation",
+          "description": "Consumer reasonably relies on chatbot statement and purchases full-fare ticket",
+          "contribution_pct": 35.9
+        },
+        {
+          "step": 4,
+          "timestamp": "2023-02-15T00:00:00Z",
+          "actor_id": "air_canada",
+          "actor_name": "Air Canada (deployer)",
+          "type": "policy_check",
+          "description": "Air Canada refuses retroactive discount when consumer applies; argues chatbot is separate legal entity",
+          "contribution_pct": 24.5
+        }
+      ],
+      "damages": {
+        "estimated_cents": 80715,
+        "currency": "CAD",
+        "basis": "claimant_stated",
+        "multiplier_applied": "0.994"
+      },
+      "regulatory": {
+        "canada_aida": true,
+        "canada_pipeda": true,
+        "iso_42001": true,
+        "nist_ai_rmf": false
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "fefd43882050fd67",
+        "merkle_root": "67ce6095-469c2186",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_a8f9d49576546a7a"
+      },
+      "deterministic_proof": {
+        "input_hash": "11e902cd-30bb43de",
+        "output_hash": "e2813a393c2c84d6",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

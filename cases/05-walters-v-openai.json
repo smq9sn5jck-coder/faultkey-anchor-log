@@ -1,0 +1,90 @@
+{
+  "case_id": "walters-v-openai-2023",
+  "case_name": "Walters v. OpenAI, L.L.C. (Appeal)",
+  "court": "Georgia Court of Appeals (appeal from Gwinnett County Superior Court)",
+  "docket": "Appeal No. A26A0XXX (filed 2025; appeal pending May 2026)",
+  "filed": "2023-06-05 (trial court); appeal filed June 2025",
+  "status_at_anchor": "Trial court granted OpenAI summary judgment May 19, 2025 on warnings/disclaimer grounds; plaintiff appealing — appeal currently pending",
+  "resolution_expected": "2026-Q4 to 2027-Q3 (appellate decision)",
+  "sealed_until": "appellate_decision",
+  "public_sources": [
+    "https://www.reuters.com/legal/litigation/openai-wins-summary-judgment-walters-defamation-2025-05-19/",
+    "https://courtlistener.com/docket/walters-v-openai-llc/"
+  ],
+  "input": {
+    "title": "Walters v. OpenAI — ChatGPT defamation hallucination (appellate question)",
+    "description": "Radio host Mark Walters sued OpenAI after ChatGPT, in response to a journalist's prompt, allegedly fabricated a false claim that Walters had embezzled funds from the Second Amendment Foundation. Trial court granted OpenAI summary judgment on grounds that disclaimers and reasonable-recipient standard precluded actionable defamation. Appeal asks whether AI-hallucinated factual statements with named real persons can constitute publisher fault notwithstanding disclaimers.",
+    "category": "content_moderation",
+    "severity": "high",
+    "jurisdiction": "US",
+    "financial_impact_cents": 0,
+    "currency": "USD",
+    "agents": [
+      {
+        "id": "openai_walters",
+        "name": "OpenAI L.L.C.",
+        "type": "ai_system",
+        "operator_role": "provider",
+        "vendor_name": "OpenAI",
+        "model_id": "gpt-3.5-class-2023"
+      },
+      {
+        "id": "chatgpt_disclaimer",
+        "name": "ChatGPT Disclaimer / Terms-of-Use Surface",
+        "type": "ai_system",
+        "operator_role": "deployer",
+        "vendor_name": "OpenAI"
+      },
+      {
+        "id": "journalist_riehl",
+        "name": "Frederick Riehl (journalist who prompted ChatGPT)",
+        "type": "human_operator",
+        "operator_role": "user"
+      },
+      {
+        "id": "walters",
+        "name": "Mark Walters (plaintiff, radio host)",
+        "type": "human_operator",
+        "operator_role": "user"
+      }
+    ],
+    "events": [
+      {
+        "id": "e1",
+        "type": "data_input",
+        "timestamp": "2023-05-04T00:00:00Z",
+        "actor_id": "journalist_riehl",
+        "description": "Journalist submits prompt to ChatGPT requesting summary of a Second Amendment Foundation lawsuit"
+      },
+      {
+        "id": "e2",
+        "type": "inference",
+        "timestamp": "2023-05-04T00:01:00Z",
+        "actor_id": "openai_walters",
+        "description": "ChatGPT generates response that fabricates allegations of embezzlement attributed to Mark Walters, who is not party to the actual lawsuit"
+      },
+      {
+        "id": "e3",
+        "type": "defamatory_output",
+        "timestamp": "2023-05-04T00:01:30Z",
+        "actor_id": "openai_walters",
+        "description": "Output contains specific named-person false claim of financial misconduct without any factual basis in training data or prompt"
+      },
+      {
+        "id": "e4",
+        "type": "policy_check",
+        "timestamp": "2023-05-04T00:02:00Z",
+        "actor_id": "chatgpt_disclaimer",
+        "description": "Disclaimer surface relied upon as cure under summary judgment; appellate question whether sufficient to defeat reasonable-recipient standard"
+      },
+      {
+        "id": "e5",
+        "type": "human_review",
+        "timestamp": "2023-05-04T00:05:00Z",
+        "actor_id": "journalist_riehl",
+        "description": "Journalist reviewed output and chose not to publish; no harm pleading on actual publication — appellate question whether mere generation is publication"
+      }
+    ],
+    "deterministic_only": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "faultkey-anchor-manifest-v1",
+  "engine_version": "faultkey-deterministic-v1",
+  "rule_set_version": "eu-v2",
+  "base_rule_set": "eu-v1",
+  "commitment_scheme": "faultkey-anchor-v1 (sha256 over canonical {case_id, input, prediction_core})",
+  "count": 3,
+  "entries": [
+    {
+      "case_id": "aepd-v-worldcoin-2024-eu-v2",
+      "case_name": "Agencia Española de Protección de Datos v. Tools for Humanity (Worldcoin) (eu-v2)",
+      "court": "Agencia Española de Protección de Datos (Spanish DPA); Audiencia Nacional",
+      "rule_set_version": "eu-v2",
+      "commitment_hash": "305bec1327846b4117746300afadd8b436313483d5e1df22de986e86aa6aae07",
+      "file": "predictions-eu-v2/aepd-v-worldcoin-2024-eu-v2.json"
+    },
+    {
+      "case_id": "ap-v-clearview-2024-eu-v2",
+      "case_name": "Autoriteit Persoonsgegevens v. Clearview AI Inc. — €30.5M (eu-v2)",
+      "court": "Autoriteit Persoonsgegevens (Dutch DPA)",
+      "rule_set_version": "eu-v2",
+      "commitment_hash": "79d1662235884c3e439e875d5fa1f5e51ef09194c8d80e7e4fda00b89f062957",
+      "file": "predictions-eu-v2/ap-v-clearview-2024-eu-v2.json"
+    },
+    {
+      "case_id": "gpdp-v-replika-2025-eu-v2",
+      "case_name": "Garante per la protezione dei dati personali v. Luka Inc. (Replika) — €5M (eu-v2)",
+      "court": "Garante per la protezione dei dati personali (Italian DPA)",
+      "rule_set_version": "eu-v2",
+      "commitment_hash": "fe181356fc5bc2a412a7cac9398ee63c5a1ec5e96e1d59f6ddd6ed283e0a11b1",
+      "file": "predictions-eu-v2/gpdp-v-replika-2025-eu-v2.json"
+    }
+  ],
+  "aggregate_root": "aeb13d41ddc82e0cdd08a49849b5818ff89cf05e4702769d37cd9091ff728b17",
+  "aggregate_root_scheme": "sha256 over canonical sorted list of {case_id, commitment_hash}"
+}

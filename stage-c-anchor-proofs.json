@@ -1,0 +1,38 @@
+{
+  "anchor_root_sha256": "2d003092f9e4c1fc10653490a46bae28d13aaac9f1451bd3fe96a3bf8cea0a2f",
+  "anchor_payload": {
+    "file": "anchor-payload.json",
+    "description": "Canonical manifest of 8 sealed FaultKey predictions on active AI-liability cases.",
+    "size_bytes": 3218
+  },
+  "anchors": {
+    "sigstore_rekor": {
+      "log_url": "https://rekor.sigstore.dev/api/v1/log/entries/108e9186e8c5677a251a2c29647c896e9a93730db37e50a00f2afa59c48877a36fc7db94b0224792",
+      "log_uuid": "108e9186e8c5677a251a2c29647c896e9a93730db37e50a00f2afa59c48877a36fc7db94b0224792",
+      "log_index": 1592642535,
+      "log_id": "c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d",
+      "integrated_time_unix": 1779382815,
+      "integrated_time_iso": "2026-05-21T17:00:15Z",
+      "verify_command": "rekor-cli get --uuid=108e9186e8c5677a251a2c29647c896e9a93730db37e50a00f2afa59c48877a36fc7db94b0224792",
+      "status": "INCLUDED_IN_TRANSPARENCY_LOG"
+    },
+    "opentimestamps": {
+      "stamp_file": "anchor-payload.json.ots",
+      "calendars_submitted": [
+        "https://a.pool.opentimestamps.org",
+        "https://b.pool.opentimestamps.org",
+        "https://a.pool.eternitywall.com",
+        "https://ots.btc.catallaxy.com"
+      ],
+      "verify_command": "ots verify anchor-payload.json.ots -f anchor-payload.json",
+      "status": "STAMPED_PENDING_BITCOIN_CONFIRMATION",
+      "btc_confirmation_eta": "1-6 hours typically; will upgrade automatically once confirmed"
+    }
+  },
+  "commitment_key": {
+    "algorithm": "ed25519",
+    "public_key_file": "anchor-key.pub.pem",
+    "purpose": "Signed payload for Rekor inclusion. Key is one-time, generated for this commitment, no further use.",
+    "private_key_destruction": "Private key will be destroyed after anchor confirmation to prevent post-facto re-signing."
+  }
+}

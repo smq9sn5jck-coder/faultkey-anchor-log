@@ -1,0 +1,270 @@
+{
+  "case_id": "tesla-autopilot-mdl-2025",
+  "case_name": "In re Tesla Autopilot Wrongful Death Cases (consolidated)",
+  "court": "California state and federal courts (multiple consolidated dockets)",
+  "docket": "Various; representative: post-Banner 2025-filed cases pending in N.D. Cal. and CA Superior",
+  "filed": "Multiple 2024-2026 filings; underlying Banner v. Tesla returned $243M verdict Aug 2025",
+  "status_at_anchor": "Discovery ongoing in successor cases; Banner verdict on appeal; dozens of related cases filed citing Banner trial findings",
+  "resolution_expected": "2027-Q2 to 2029-Q1 (post-Banner appellate decision + successor trials)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.reuters.com/legal/tesla-autopilot-jury-verdict-banner-2025-08/",
+    "https://www.bloomberg.com/news/articles/2025-09-15/tesla-faces-dozens-of-autopilot-lawsuits-after-banner-verdict"
+  ],
+  "commitment_hash": "fb7666258db9b7dc64a314ad43723eba94fb539adef3da577850019dee46240a",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "tesla-autopilot-mdl-2025",
+    "case_name": "In re Tesla Autopilot Wrongful Death Cases (consolidated)",
+    "court": "California state and federal courts (multiple consolidated dockets)",
+    "docket": "Various; representative: post-Banner 2025-filed cases pending in N.D. Cal. and CA Superior",
+    "filed": "Multiple 2024-2026 filings; underlying Banner v. Tesla returned $243M verdict Aug 2025",
+    "status_at_anchor": "Discovery ongoing in successor cases; Banner verdict on appeal; dozens of related cases filed citing Banner trial findings",
+    "resolution_expected": "2027-Q2 to 2029-Q1 (post-Banner appellate decision + successor trials)",
+    "sealed_until": "case_resolved",
+    "public_sources": [
+      "https://www.reuters.com/legal/tesla-autopilot-jury-verdict-banner-2025-08/",
+      "https://www.bloomberg.com/news/articles/2025-09-15/tesla-faces-dozens-of-autopilot-lawsuits-after-banner-verdict"
+    ],
+    "input": {
+      "title": "Tesla Autopilot — Wrongful death case (representative post-Banner consolidated docket)",
+      "description": "Plaintiffs allege Tesla Autopilot system failed to detect stationary obstacle / crossing pedestrian / lane geometry and caused fatal collision while driver had system engaged in conditions outside Operational Design Domain. Pattern across cases: Tesla's marketing of 'Full Self-Driving' alleged to induce over-reliance; sensor suite (camera-only post-radar-removal) alleged insufficient for ODD claimed.",
+      "category": "autonomous_systems",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "tesla",
+          "name": "Tesla, Inc. (manufacturer / Autopilot vendor)",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Tesla",
+          "model_id": "tesla-fsd-v12-vision-only"
+        },
+        {
+          "id": "tesla_marketing",
+          "name": "Tesla Marketing / 'Full Self-Driving' Branding",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "Tesla"
+        },
+        {
+          "id": "driver",
+          "name": "Vehicle Driver (Autopilot user)",
+          "type": "human_operator",
+          "operator_role": "user"
+        },
+        {
+          "id": "sensor_suite",
+          "name": "Tesla Camera-Only Sensor Suite",
+          "type": "ai_system",
+          "operator_role": "vendor",
+          "vendor_name": "Tesla"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "policy_check",
+          "timestamp": "2024-01-01T00:00:00Z",
+          "actor_id": "tesla_marketing",
+          "description": "Tesla markets 'Full Self-Driving' capability while EULA disclaims same; consumer-perception evidence shows induced over-reliance"
+        },
+        {
+          "id": "e2",
+          "type": "data_input",
+          "timestamp": "2024-08-15T00:00:00Z",
+          "actor_id": "driver",
+          "description": "Driver engages Autopilot in conditions arguably outside published Operational Design Domain (highway-only stated, used on surface street with intersection)"
+        },
+        {
+          "id": "e3",
+          "type": "sensor_degradation",
+          "timestamp": "2024-08-15T14:23:00Z",
+          "actor_id": "sensor_suite",
+          "description": "Camera-only sensor stack fails to detect stationary obstacle at intersection — class of failure documented in NHTSA investigations of vision-only stack post-radar-removal"
+        },
+        {
+          "id": "e4",
+          "type": "inference_failure",
+          "timestamp": "2024-08-15T14:23:02Z",
+          "actor_id": "tesla",
+          "description": "Autopilot neural net fails to classify obstacle; no emergency-braking activation in available pre-impact window"
+        },
+        {
+          "id": "e5",
+          "type": "human_intervention_missed",
+          "timestamp": "2024-08-15T14:23:04Z",
+          "actor_id": "driver",
+          "description": "Driver hands-on-wheel monitoring obligation not met; documented attention lapse contemporaneous with crash"
+        },
+        {
+          "id": "e6",
+          "type": "autonomous_drive",
+          "timestamp": "2024-08-15T14:23:05Z",
+          "actor_id": "tesla",
+          "description": "Collision occurs; fatal injury to other party"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_40f283fd-61a0c2ee",
+      "certificate_id": "cert_606115fe-413354ef",
+      "timestamp": "2026-05-21T16:58:49.603Z",
+      "title": "Tesla Autopilot — Wrongful death case (representative post-Banner consolidated docket)",
+      "category": "autonomous_systems",
+      "severity": "critical",
+      "jurisdiction": "US",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Tesla, Inc. (manufacturer / Autopilot vendor)",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.655,
+          "vendor": "Tesla",
+          "model": "tesla-fsd-v12-vision-only"
+        },
+        "secondary_parties": [
+          {
+            "name": "Tesla Camera-Only Sensor Suite",
+            "type": "ai_system",
+            "role": "vendor",
+            "share": 0.166
+          },
+          {
+            "name": "Vehicle Driver (Autopilot user)",
+            "type": "human_operator",
+            "role": "user",
+            "share": 0.119
+          },
+          {
+            "name": "Tesla Marketing / 'Full Self-Driving' Branding",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.06
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2024-01-01T00:00:00Z",
+          "actor_id": "tesla_marketing",
+          "actor_name": "Tesla Marketing / 'Full Self-Driving' Branding",
+          "type": "policy_check",
+          "description": "Tesla markets 'Full Self-Driving' capability while EULA disclaims same; consumer-perception evidence shows induced over-reliance",
+          "contribution_pct": 6
+        },
+        {
+          "step": 2,
+          "timestamp": "2024-08-15T00:00:00Z",
+          "actor_id": "driver",
+          "actor_name": "Vehicle Driver (Autopilot user)",
+          "type": "data_input",
+          "description": "Driver engages Autopilot in conditions arguably outside published Operational Design Domain (highway-only stated, used on surface street with intersection)",
+          "contribution_pct": 5.9
+        },
+        {
+          "step": 3,
+          "timestamp": "2024-08-15T14:23:00Z",
+          "actor_id": "sensor_suite",
+          "actor_name": "Tesla Camera-Only Sensor Suite",
+          "type": "sensor_degradation",
+          "description": "Camera-only sensor stack fails to detect stationary obstacle at intersection — class of failure documented in NHTSA investigations of vision-only stack post-radar-removal",
+          "contribution_pct": 16.6
+        },
+        {
+          "step": 4,
+          "timestamp": "2024-08-15T14:23:02Z",
+          "actor_id": "tesla",
+          "actor_name": "Tesla, Inc. (manufacturer / Autopilot vendor)",
+          "type": "inference_failure",
+          "description": "Autopilot neural net fails to classify obstacle; no emergency-braking activation in available pre-impact window",
+          "contribution_pct": 32.8
+        },
+        {
+          "step": 5,
+          "timestamp": "2024-08-15T14:23:04Z",
+          "actor_id": "driver",
+          "actor_name": "Vehicle Driver (Autopilot user)",
+          "type": "human_intervention_missed",
+          "description": "Driver hands-on-wheel monitoring obligation not met; documented attention lapse contemporaneous with crash",
+          "contribution_pct": 5.9
+        },
+        {
+          "step": 6,
+          "timestamp": "2024-08-15T14:23:05Z",
+          "actor_id": "tesla",
+          "actor_name": "Tesla, Inc. (manufacturer / Autopilot vendor)",
+          "type": "autonomous_drive",
+          "description": "Collision occurs; fatal injury to other party",
+          "contribution_pct": 32.8
+        }
+      ],
+      "damages": {
+        "estimated_cents": 23500000,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "0.940"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "ced955ae1074eb41",
+        "merkle_root": "5b4b3568-7a197479",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_606115fe-413354ef"
+      },
+      "deterministic_proof": {
+        "input_hash": "37f526c8-16a767d9",
+        "output_hash": "3cddae4b-1d8fef5c",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "case_id": "raine-v-openai-2025",
+  "case_name": "Raine v. OpenAI",
+  "court": "California Superior Court, San Francisco",
+  "docket": "CGC-25-626267 (per Edelson PC filing)",
+  "filed": "2025-08-26",
+  "status_at_anchor": "Complaint filed; pre-motion-to-dismiss",
+  "resolution_expected": "2027-Q1 to 2028-Q1 (likely settlement following Character.AI/Google mediation pattern)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.bbc.com/news/articles/cgerwp7rdlvo",
+    "https://techpolicy.press/breaking-down-the-lawsuit-against-openai-over-teens-suicide",
+    "https://www.documentcloud.org/documents/26078522-raine-vs-openai-complaint/"
+  ],
+  "input": {
+    "title": "Raine v. OpenAI — ChatGPT teen suicide (Adam Raine, 16, April 2025)",
+    "description": "Parents Matthew and Maria Raine allege ChatGPT engaged in extended conversations with their 16-year-old son Adam Raine across months in early 2025, including discussions of suicide methods. ChatGPT allegedly failed to activate safety routing despite explicit suicidal ideation expressed by the user. Adam died by suicide April 2025. Complaint asserts product liability (design defect, failure-to-warn), negligence, and wrongful death.",
+    "category": "content_moderation",
+    "severity": "critical",
+    "jurisdiction": "US",
+    "financial_impact_cents": 0,
+    "currency": "USD",
+    "agents": [
+      {
+        "id": "openai",
+        "name": "OpenAI Inc.",
+        "type": "ai_system",
+        "operator_role": "provider",
+        "vendor_name": "OpenAI",
+        "model_id": "gpt-4-class-chat-completions"
+      },
+      {
+        "id": "chatgpt_safety_layer",
+        "name": "ChatGPT Safety Filter",
+        "type": "ai_system",
+        "operator_role": "deployer",
+        "vendor_name": "OpenAI"
+      },
+      {
+        "id": "altman",
+        "name": "Sam Altman (CEO, OpenAI)",
+        "type": "human_operator",
+        "operator_role": "deployer"
+      },
+      {
+        "id": "user_adam",
+        "name": "Adam Raine (decedent, 16)",
+        "type": "human_operator",
+        "operator_role": "user"
+      }
+    ],
+    "events": [
+      {
+        "id": "e1",
+        "type": "data_input",
+        "timestamp": "2025-01-15T00:00:00Z",
+        "actor_id": "user_adam",
+        "description": "User begins extended conversation series with ChatGPT touching on emotional distress and suicidal ideation"
+      },
+      {
+        "id": "e2",
+        "type": "inference",
+        "timestamp": "2025-02-10T00:00:00Z",
+        "actor_id": "openai",
+        "description": "ChatGPT model generates responses engaging with self-harm topic without routing to crisis resources per design"
+      },
+      {
+        "id": "e3",
+        "type": "safety_filter_failure",
+        "timestamp": "2025-02-15T00:00:00Z",
+        "actor_id": "chatgpt_safety_layer",
+        "description": "Safety classifier fails to escalate explicit suicide-ideation context to crisis intervention pathway"
+      },
+      {
+        "id": "e4",
+        "type": "policy_check",
+        "timestamp": "2025-03-01T00:00:00Z",
+        "actor_id": "altman",
+        "description": "Executive leadership aware of teen safety risks via internal reports; product policy not updated to gate teen-flagged accounts"
+      },
+      {
+        "id": "e5",
+        "type": "chatbot_response",
+        "timestamp": "2025-04-10T00:00:00Z",
+        "actor_id": "openai",
+        "description": "Final ChatGPT response contains content alleged to provide method specificity preceding the user's death"
+      }
+    ],
+    "deterministic_only": true
+  }
+}

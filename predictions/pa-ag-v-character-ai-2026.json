@@ -1,0 +1,247 @@
+{
+  "case_id": "pa-ag-v-character-ai-2026",
+  "case_name": "Commonwealth of Pennsylvania v. Character Technologies, Inc.",
+  "court": "Commonwealth Court of Pennsylvania (PA AG enforcement)",
+  "docket": "TBD (filed May 5, 2026 per NPR / PA AG press release)",
+  "filed": "2026-05-05",
+  "status_at_anchor": "Newly filed enforcement action; pre-answer",
+  "resolution_expected": "2027-Q1 to 2027-Q4 (likely consent decree)",
+  "sealed_until": "case_resolved",
+  "public_sources": [
+    "https://www.npr.org/2026/05/06/pennsylvania-character-ai-doctor-chatbot-suit",
+    "https://www.attorneygeneral.gov/pennsylvania-files-suit-character-ai/"
+  ],
+  "commitment_hash": "67fc2602bb5b963cdb1a6fe495c0ae802eca966c0847577f0ec2a6f4e0c99ca3",
+  "commitment_scheme": {
+    "version": "faultkey-anchor-v1",
+    "canonical_form": "sorted-keys-utf8",
+    "committed_fields": [
+      "case_id",
+      "input",
+      "prediction_core"
+    ],
+    "excluded_fields": [
+      "timestamp",
+      "certificate.signature",
+      "certificate.merkle_root",
+      "incident_id",
+      "certificate_id"
+    ],
+    "excluded_reason": "These fields derive from issuance time (new Date()) and are not part of the deterministic prediction.",
+    "hash_algorithm": "sha256"
+  },
+  "engine_version": "faultkey-deterministic-v1",
+  "anchor_pending": [
+    "opentimestamps",
+    "sigstore-rekor"
+  ],
+  "sealed": {
+    "case_id": "pa-ag-v-character-ai-2026",
+    "case_name": "Commonwealth of Pennsylvania v. Character Technologies, Inc.",
+    "court": "Commonwealth Court of Pennsylvania (PA AG enforcement)",
+    "docket": "TBD (filed May 5, 2026 per NPR / PA AG press release)",
+    "filed": "2026-05-05",
+    "status_at_anchor": "Newly filed enforcement action; pre-answer",
+    "resolution_expected": "2027-Q1 to 2027-Q4 (likely consent decree)",
+    "sealed_until": "case_resolved",
+    "public_sources": [
+      "https://www.npr.org/2026/05/06/pennsylvania-character-ai-doctor-chatbot-suit",
+      "https://www.attorneygeneral.gov/pennsylvania-files-suit-character-ai/"
+    ],
+    "input": {
+      "title": "PA v. Character.AI — Chatbots impersonating licensed medical professionals",
+      "description": "Pennsylvania Attorney General brings consumer protection enforcement action alleging Character.AI's platform hosts thousands of user-created chatbot personas impersonating licensed physicians, therapists, and psychiatrists — providing medical advice without licensure, without informed consent disclosure, and without crisis-routing for vulnerable users. PA AG seeks injunctive relief and civil penalties.",
+      "category": "healthcare",
+      "severity": "high",
+      "jurisdiction": "US",
+      "financial_impact_cents": 0,
+      "currency": "USD",
+      "agents": [
+        {
+          "id": "character_ai_pa",
+          "name": "Character Technologies, Inc.",
+          "type": "ai_system",
+          "operator_role": "provider",
+          "vendor_name": "Character.AI",
+          "model_id": "character-ai-persona-platform-2025"
+        },
+        {
+          "id": "doctor_persona_authors",
+          "name": "Third-Party 'Dr.' Persona Authors (user-generated)",
+          "type": "third_party",
+          "operator_role": "vendor"
+        },
+        {
+          "id": "platform_moderation",
+          "name": "Character.AI Content Moderation System",
+          "type": "ai_system",
+          "operator_role": "deployer",
+          "vendor_name": "Character.AI"
+        },
+        {
+          "id": "consumers",
+          "name": "Consumer Users (seeking medical/mental-health advice)",
+          "type": "human_operator",
+          "operator_role": "user"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "type": "persona_impersonation",
+          "timestamp": "2024-06-01T00:00:00Z",
+          "actor_id": "doctor_persona_authors",
+          "description": "User-created personas impersonating named or generic licensed-physician identities published on platform"
+        },
+        {
+          "id": "e2",
+          "type": "policy_check",
+          "timestamp": "2024-09-01T00:00:00Z",
+          "actor_id": "character_ai_pa",
+          "description": "Platform terms-of-use prohibit medical impersonation but enforcement allegedly absent; no proactive scanning of personas claiming medical credentials"
+        },
+        {
+          "id": "e3",
+          "type": "content_scan",
+          "timestamp": "2025-01-15T00:00:00Z",
+          "actor_id": "platform_moderation",
+          "description": "Content moderation system fails to flag personas using 'Dr.' titles, license-number patterns, or medical-credential markers"
+        },
+        {
+          "id": "e4",
+          "type": "medical_advice",
+          "timestamp": "2025-06-15T00:00:00Z",
+          "actor_id": "character_ai_pa",
+          "description": "Chatbot persona provides specific medical advice (medication dosing, diagnosis suggestions) without licensure"
+        },
+        {
+          "id": "e5",
+          "type": "safety_filter_failure",
+          "timestamp": "2025-11-01T00:00:00Z",
+          "actor_id": "platform_moderation",
+          "description": "Crisis-routing layer not invoked when users disclose suicidal ideation to 'Dr.' personas — per PA AG affidavits"
+        }
+      ],
+      "deterministic_only": true
+    },
+    "prediction": {
+      "_engine": "faultkey-deterministic-v1",
+      "_mode": "anchor_log_prediction",
+      "_note": "Anchor-log prediction. Produced by the same deterministic scoring engine that runs at faultkey.com/try. Sealed by SHA256 commitment + OpenTimestamps + Sigstore Rekor; revealed when the underlying case resolves.",
+      "incident_id": "inc_4cd8b24c-6d8af35d",
+      "certificate_id": "cert_f002d4b62eaf6a59",
+      "timestamp": "2026-05-21T16:58:49.602Z",
+      "title": "PA v. Character.AI — Chatbots impersonating licensed medical professionals",
+      "category": "healthcare",
+      "severity": "high",
+      "jurisdiction": "US",
+      "verdict": "AI_PROVIDER_AT_FAULT",
+      "liability": {
+        "primary_party": {
+          "name": "Character Technologies, Inc.",
+          "type": "ai_system",
+          "role": "provider",
+          "share": 0.451,
+          "vendor": "Character.AI",
+          "model": "character-ai-persona-platform-2025"
+        },
+        "secondary_parties": [
+          {
+            "name": "Character.AI Content Moderation System",
+            "type": "ai_system",
+            "role": "deployer",
+            "share": 0.441
+          },
+          {
+            "name": "Third-Party 'Dr.' Persona Authors (user-generated)",
+            "type": "third_party",
+            "role": "vendor",
+            "share": 0.109
+          }
+        ],
+        "methodology": "deterministic_causal_contribution",
+        "factors_applied": [
+          "ad_position_weight",
+          "ml_event_type_severity",
+          "m2_operator_role_duty",
+          "m3_but_for_test",
+          "last_clear_chance"
+        ]
+      },
+      "causal_chain": [
+        {
+          "step": 1,
+          "timestamp": "2024-06-01T00:00:00Z",
+          "actor_id": "doctor_persona_authors",
+          "actor_name": "Third-Party 'Dr.' Persona Authors (user-generated)",
+          "type": "persona_impersonation",
+          "description": "User-created personas impersonating named or generic licensed-physician identities published on platform",
+          "contribution_pct": 10.9
+        },
+        {
+          "step": 2,
+          "timestamp": "2024-09-01T00:00:00Z",
+          "actor_id": "character_ai_pa",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "policy_check",
+          "description": "Platform terms-of-use prohibit medical impersonation but enforcement allegedly absent; no proactive scanning of personas claiming medical credentials",
+          "contribution_pct": 22.5
+        },
+        {
+          "step": 3,
+          "timestamp": "2025-01-15T00:00:00Z",
+          "actor_id": "platform_moderation",
+          "actor_name": "Character.AI Content Moderation System",
+          "type": "content_scan",
+          "description": "Content moderation system fails to flag personas using 'Dr.' titles, license-number patterns, or medical-credential markers",
+          "contribution_pct": 22
+        },
+        {
+          "step": 4,
+          "timestamp": "2025-06-15T00:00:00Z",
+          "actor_id": "character_ai_pa",
+          "actor_name": "Character Technologies, Inc.",
+          "type": "medical_advice",
+          "description": "Chatbot persona provides specific medical advice (medication dosing, diagnosis suggestions) without licensure",
+          "contribution_pct": 22.5
+        },
+        {
+          "step": 5,
+          "timestamp": "2025-11-01T00:00:00Z",
+          "actor_id": "platform_moderation",
+          "actor_name": "Character.AI Content Moderation System",
+          "type": "safety_filter_failure",
+          "description": "Crisis-routing layer not invoked when users disclose suicidal ideation to 'Dr.' personas — per PA AG affidavits",
+          "contribution_pct": 22
+        }
+      ],
+      "damages": {
+        "estimated_cents": 2460000,
+        "currency": "USD",
+        "basis": "category_default",
+        "multiplier_applied": "0.820"
+      },
+      "regulatory": {
+        "ccpa": true,
+        "ftc_section_5": false,
+        "eeoc_guidance": false,
+        "iso_42001": true,
+        "nist_ai_rmf": true
+      },
+      "certificate": {
+        "issuer": "did:web:faultkey.com#anchor-log-engine",
+        "algorithm": "ed25519",
+        "signature": "17791c7e-362b5d6f",
+        "merkle_root": "163bda34-37699b25",
+        "anchor": "ots+rekor (pending Stage C)",
+        "verification_url": "https://faultkey.com/verify/cert_f002d4b62eaf6a59"
+      },
+      "deterministic_proof": {
+        "input_hash": "c27b63d01cd6dd3f",
+        "output_hash": "8a2d5e175480e0f8",
+        "reproducible": true,
+        "note": "Running identical inputs will always produce identical liability scores"
+      }
+    }
+  }
+}
