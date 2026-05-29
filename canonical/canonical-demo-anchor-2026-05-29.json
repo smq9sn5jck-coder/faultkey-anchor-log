@@ -1,0 +1,54 @@
+{
+  "schema": "causallayer.audit-batch.v1",
+  "title": "FaultKey canonical public-demo audit batch",
+  "purpose": "A real audit-batch.v1 anchor signed under the FaultKey canonical demo key. Published so external reviewers can verify the full cryptographic chain (body sha, Merkle root, public-key fingerprint, Ed25519 signature) end-to-end with the open-source verifier. This is NOT a production engine batch; it is the externally-verifiable demo artefact pinned at a stable URL.",
+  "generated_at": "2026-05-29T14:50:00+00:00",
+  "engine_version": "demo-1.0.0",
+  "corpus_versions": [],
+  "leaf_count": 3,
+  "leaves": [
+    {
+      "leaf_index": 1,
+      "leaf_type": "engine_cert",
+      "title": "Public artefact: anchor-payload-eu-v1.json",
+      "artefact_path": "https://raw.githubusercontent.com/smq9sn5jck-coder/faultkey-anchor-log/main/anchor-payload-eu-v1.json",
+      "sha256": "8e469643fe5384363ee8d519b05d8073e3c8647925dc04e63e760f8c7ba0621a",
+      "merkle_root_of_anchor": null,
+      "leaf_count_in_anchor": null,
+      "ots_proof": null
+    },
+    {
+      "leaf_index": 2,
+      "leaf_type": "engine_cert",
+      "title": "Public artefact: anchor-payload-eu-v2.json",
+      "artefact_path": "https://raw.githubusercontent.com/smq9sn5jck-coder/faultkey-anchor-log/main/anchor-payload-eu-v2.json",
+      "sha256": "fbc5640458ddfd45605879a7416cc647c4cad23bbc028878020052ea6dbcfd34",
+      "merkle_root_of_anchor": null,
+      "leaf_count_in_anchor": null,
+      "ots_proof": null
+    },
+    {
+      "leaf_index": 3,
+      "leaf_type": "engine_cert",
+      "title": "Public artefact: anchor-payload.json",
+      "artefact_path": "https://raw.githubusercontent.com/smq9sn5jck-coder/faultkey-anchor-log/main/anchor-payload.json",
+      "sha256": "9655bdaf193ea4e45247ec67b67a93476adf274be3e9b0ac20cba510586c5236",
+      "merkle_root_of_anchor": null,
+      "leaf_count_in_anchor": null,
+      "ots_proof": null
+    }
+  ],
+  "merkle_algorithm": "bitcoin-style-duplicate-last-sha256",
+  "batch_merkle_root": "84f50130bf0b8147d67683f543df636231b8006dccbfb960d711e75ef3c9683a",
+  "status": "SEALED",
+  "notes": "Anyone holding the public key (canonical-demo-key.pem) can verify this anchor by running: npx causallayer-verifier <this file> --key canonical-demo-key.pem",
+  "batch_body_sha256": "716758c7c544b014f8bedf36f0440310c67471e396d0882d9bc5d2ca62b02d66",
+  "signature": {
+    "alg": "Ed25519",
+    "signed_field": "batch_body_sha256",
+    "signed_field_encoding": "utf8(hex)",
+    "signature_hex": "f8d866f9f7564ea6af2c2c6afb54933dfd65b2c7f37491f83302116543480690cddbd76c4f09b3ffa2f70d8be431677929d00daef93af4d29af4a13a72b54f01",
+    "pubkey_sha256_fingerprint": "ad0627bedc519bf002988366280169475046913ddeb225f5a23017cd7b351ae1",
+    "key_id": "faultkey-canonical-demo-2026-05-29"
+  }
+}
