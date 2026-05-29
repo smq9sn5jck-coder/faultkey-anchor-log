@@ -1,0 +1,39 @@
+{
+  "schema": "faultkey-methodology-anchor-v1",
+  "document_id": "faultkey-methodology-v1.0.0",
+  "document_title": "FaultKey Engine Brief — Deterministic AI-Liability Attribution",
+  "version": "1.0.0",
+  "anchored_at": "2026-05-29T22:30:00Z",
+  "artifact": {
+    "filename": "faultkey-engine-brief.pdf",
+    "public_url": "https://faultkey.com/docs/faultkey-engine-brief.pdf",
+    "size_bytes": 212478,
+    "pages": 23,
+    "sha256": "42b2b2d719e51366a2245e50732404300006a756d9c60e2ac9505d47aa335009",
+    "media_type": "application/pdf",
+    "language": "en"
+  },
+  "scope": {
+    "engine_versions_governed": ["faultkey-deterministic-v1", "calb2-v0.7"],
+    "methodology_ids_governed": [
+      "FK-METHOD-2026-001",
+      "FK-METHOD-2026-002",
+      "FK-METHOD-2026-003",
+      "FK-METHOD-2026-004",
+      "FK-METHOD-2026-005",
+      "FK-METHOD-2026-006"
+    ],
+    "rule_set_version": "eu-v2",
+    "supersedes": null
+  },
+  "commitment": {
+    "scheme": "faultkey-anchor-v1",
+    "commitment_hash": "42b2b2d719e51366a2245e50732404300006a756d9c60e2ac9505d47aa335009",
+    "canonical_form": "raw bytes of the PDF artifact identified by artifact.sha256"
+  },
+  "notes": [
+    "This anchor pins the methodology document that every CausalCertificateV1 issued under engine versions faultkey-deterministic-v1 / calb2-v0.7 cites by version + hash.",
+    "Any change to the methodology requires a new version (e.g. 1.0.1) and a new anchor entry; the previous version remains pinned and verifiable indefinitely.",
+    "The PDF is hosted at the public_url above. Anyone re-downloading that URL can recompute sha256 and compare against artifact.sha256 to confirm byte-identity with this anchor."
+  ]
+}
